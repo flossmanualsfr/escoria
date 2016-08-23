@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=1]
+[gd_scene load_steps=3 format=1]
 
 [ext_resource path="res://globals/item.gd" type="Script" id=1]
+[ext_resource path="res://scenes/intro-game/sprites/good-bamboo.png" type="Texture" id=2]
 
 [node name="good_bamboo" type="Node2D"]
 
@@ -27,25 +28,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 0.0
-margin/top = 0.0
-margin/right = 126.0
-margin/bottom = 29.0
-
-[node name="Label" type="Label" parent="."]
-
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 8.0
-margin/top = 8.0
-margin/right = 92.0
-margin/bottom = 22.0
-text = "GOOD BAMBOO"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
+margin/left = -31.0
+margin/top = -473.0
+margin/right = 302.0
+margin/bottom = 45.0
 
 [node name="animation" type="AnimationPlayer" parent="."]
 
@@ -56,5 +42,10 @@ playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
 autoplay = ""
+
+[node name="Sprite" type="Sprite" parent="."]
+
+transform/pos = Vector2( 136.288, -222.715 )
+texture = ExtResource( 2 )
 
 

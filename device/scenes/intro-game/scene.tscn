@@ -29,7 +29,7 @@ transform/pos = Vector2( 1675.15, 681.184 )
 
 [node name="old_man" parent="." instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 515.754, 661.049 )
+transform/pos = Vector2( 607.808, 602.469 )
 transform/scale = Vector2( 0.7, 0.7 )
 
 [node name="background" type="TextureFrame" parent="."]
@@ -38,10 +38,10 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 52.0
-margin/top = -62.0
-margin/right = 1335.0
-margin/bottom = 660.0
+margin/left = -7.0
+margin/top = -3.0
+margin/right = 1276.0
+margin/bottom = 719.0
 stretch_mode = 0
 script/script = ExtResource( 6 )
 action = "walk"

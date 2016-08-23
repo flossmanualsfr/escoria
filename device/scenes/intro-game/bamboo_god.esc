@@ -1,16 +1,22 @@
-:talk
+:use inv_good_bamboo
 
-> [i/inv_good_bamboo]
-	set_state bamboo_god happy
-	say bamboo_god "Thank you for your kind offering young panda, you shall receive my blessings."
+set_state bamboo_god happy
+say bamboo_god "Thank you for your kind offering young panda, you shall receive my blessings."
 
-> [i/inv_bad_bamboo]
-	set_state bamboo_god angry
-	say bamboo_god "What is the meaning of this! “Made in China”?! Be wary of my wrath as I shall curse you and all your lineage!"
-	set_globals i/* false
-	set_global god_appeared false
-	set_global picked_item false
-	set_active bamboo_god false
-	set_active bad_bamboo true
-	set_active good_bamboo true
-	set_state baboo_god neutral
+
+:use inv_bad_bamboo
+
+set_state bamboo_god angry
+say bamboo_god "What is the meaning of this! “Made in China”?! Be wary of my wrath as I shall curse you and all your lineage!"
+set_globals i/* false
+set_global god_appeared false
+set_global picked_item false
+set_active bamboo_god false
+set_active bad_bamboo true
+set_active good_bamboo true
+set_state bamboo_god neutral
+
+
+:use
+
+stop

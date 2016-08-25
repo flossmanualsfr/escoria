@@ -44,7 +44,9 @@ func anim_finished():
 		set_scale(get_scale() * anim_scale_override)
 		anim_scale_override = null
 
-	set_state(state, true)
+	var cur = animation.get_current_animation()
+	if cur != state:
+		set_state(state, true)
 
 func set_active(p_active):
 	active = p_active
@@ -104,6 +106,14 @@ func _check_focus(focus, pressed):
 		else:
 			get_node("_pressed").hide()
 
+func get_tooltip():
+	if TranslationServer.get_locale() == Globals.get("application/tooltip_lang_default"):
+		return tooltip
+	else:
+		if tr(tooltip) == tooltip:
+			return global_id+".tooltip"
+		else:
+			return tooltip
 
 func get_drag_data(point):
 	printt("get drag data on point ", point, inventory)

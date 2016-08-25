@@ -1,0 +1,11 @@
+"id","en"
+"use.id","Use %1"
+"use.combine_id", "Use %1 with %2"
+"UI_CONTINUE", "Continue"
+"UI_NEW_GAME", "New Game"
+"UI_QUIT", "Quit"
+"UI_YES", "Yes"
+"UI_NO", "No"
+"UI_QUIT_CONFIRM", "Are you sure you want to quit?"
+"UI_NEW_GAME_CONFIRM", "Start new game? Your unsaved progress will be lost"
+

@@ -1,4 +1,4 @@
-extends Control
+extends Control 
 
 var target = null
 var slot = ""
@@ -9,7 +9,7 @@ func start(message, p_target, p_slot):
 	target = p_target
 	slot = p_slot
 	anim.play("open")
-	get_node("/root/main").menu_open(self)
+	main.menu_open(self)
 	show()
 
 func button_pressed(p_confirm):
@@ -18,7 +18,6 @@ func button_pressed(p_confirm):
 		return
 	if target != null:
 		target.call_deferred(slot, p_confirm)
-
 	close()
 
 func menu_collapsed():
@@ -26,14 +25,16 @@ func menu_collapsed():
 
 
 func close():
-	get_node("/root/main").menu_close(self)
+	main.menu_close(self)
 	if anim.is_playing():
 		var cur = anim.get_current_animation()
 		if cur == "close":
 			return
+
 	anim.play("close")
 
-func anim_finished():
+func anim_finished(anim_name):
+	# TODO use parameter here?
 	var cur = anim.get_current_animation()
 	if cur == "close":
 		queue_free()
@@ -48,4 +49,4 @@ func _ready():
 	get_node("yes").connect("pressed", self, "button_pressed", [true])
 	get_node("no").connect("pressed", self, "button_pressed", [false])
 	anim = get_node("animation")
-	anim.connect("finished", self, "anim_finished")
+	anim.connect("animation_finished", self, "anim_finished")

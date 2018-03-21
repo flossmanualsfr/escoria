@@ -1,4 +1,4 @@
-tool 
+tool
 
 extends Node2D
 
@@ -222,7 +222,7 @@ func _check_bounds():
 
 func _update_terrain():
 	var pos = get_position()
-	set_z(pos.y)
+	set_z_index(pos.y)
 	var color = terrain.get_terrain(pos)
 	var scal = terrain.get_scale_range(color.b)
 	scal.x = scal.x * pose_scale
@@ -244,7 +244,9 @@ func _process(time):
 		else:
 			next = walk_path[path_ofs]
 
-		var dist = speed * time * last_scale.x * last_scale.x
+		var dist = speed * time * pow(last_scale.x, 2) * terrain.player_speed_multiplier
+		if walk_context and walk_context.fast:
+			dist *= terrain.player_doubleclick_speed_multiplier
 		var dir = (next - pos).normalized()
 
 		# assume that x^2 + y^2 == 1, apply v_speed_damp the y axis

@@ -58,11 +58,14 @@ var settings_default = {
 }
 
 
-var scenes_cache_list = preload("res://game/scenes_cache.gd").scenes
+var scenes_cache_list = preload("res://globals/scenes_cache.gd").scenes
 
 var scenes_cache = {} # this will eventually have everything in scenes_cache_list forever
 
 var settings
+
+# Keep previous states on a stack to revert zoom
+var _zoom_stack = []
 
 func save_settings():
 	save_data.save_settings(settings, null)
@@ -87,41 +90,10 @@ func settings_loaded(p_settings):
 	AudioServer.set_bus_volume_db(0, settings.sfx_volume)
 	TranslationServer.set_locale(settings.text_lang)
 	music_volume_changed()
-	# use 2D and keep ratio in project settings instead of custom code
-	#update_window_fullscreen(true)
 	get_tree().call_group_flags(SceneTree.GROUP_CALL_DEFAULT, "ui", "language_changed")
-
-#unused, see line 90
-func update_window_fullscreen(p_force = false):
-	if ProjectSettings.get("debug/screen_size_override"):
-		return
-	if !p_force && (settings.fullscreen == OS.is_window_fullscreen()):
-		return
-	if settings.fullscreen:
-		OS.set_window_resizable(true)
-		OS.set_window_fullscreen(settings.fullscreen)
-		pass
-	else:
-		var title = ProjectSettings.get("platform/window_title_height")
-		var sc = OS.get_current_screen()
-		var ratio = 1080 / 1920.0
-		var size = OS.get_screen_size(sc)
-		printt("***** got screen size ", size, title)
-		var h = size.y - title
-		if h / ratio > size.x:
-			size.y = size.x * ratio
-		else:
-			size.y = size.y - title
-			size.x = h / ratio
-		printt("setting window to size", size)
-		OS.set_window_fullscreen(settings.fullscreen)
-		OS.set_window_size(size)
-		#OS.set_window_position(Vector2(0, 0))
-		OS.set_window_resizable(ProjectSettings.get("platform/screen_resizable"))
 
 func music_volume_changed():
 	emit_signal("music_volume_changed")
-
 
 func drag_begin(obj_id):
 	drag_object = obj_id
@@ -186,13 +158,29 @@ func update_camera(time):
 			camera.set_position(cpos + dif.normalized() * dist)
 			pos = cpos + dif.normalized() * dist
 
-	if ProjectSettings.get("platform/use_custom_camera"):
-		var half = game_size / 2
-		pos = _adjust_camera(pos)
-		var t = Transform2D()
-		t[2] = (-(pos - half))
+	var half = game_size / 2
+	pos = _adjust_camera(pos)
+	var t = Transform2D()
+	t[2] = (-(pos - half))
 
-		get_node("/root").set_canvas_transform(t)
+	get_node("/root").set_canvas_transform(t)
+
+func camera_set_zoom_height(zoom_height):
+	var scale = game_size.y / zoom_height
+	camera_zoom_in(scale)
+
+func camera_zoom_in(magnitude):
+	var current_scene = main.get_current_scene()
+	if current_scene and current_scene is preload("res://globals/scene.gd"):
+		# Save current state so that we can reset zoom
+		_zoom_stack.append({"scale": current_scene.scale})
+		current_scene.scale *= Vector2(magnitude, magnitude)
+
+func camera_zoom_out():
+	var current_scene = main.get_current_scene()
+	var prev_state = _zoom_stack.pop_back()
+	if current_scene and current_scene is preload("res://globals/scene.gd") and prev_state:
+		current_scene.scale = prev_state["scale"]
 
 func _adjust_camera(pos):
 	var half = game_size / 2
@@ -294,7 +282,7 @@ func compile_str(p_str):
 	return ev_table
 
 func report_errors(p_path, errors):
-	#var dialog = preload("res://game/globals/errors.xml").instance()
+	#var dialog = preload("res://demo/globals/errors.xml").instance()
 	var text = "Errors in file "+p_path+"\n\n"
 	for e in errors:
 		text += e+"\n"
@@ -357,6 +345,14 @@ func set_state(name, state):
 
 func set_active(name, active):
 	actives[name] = active
+
+func set_use_action_menu(obj, should_use_action_menu):
+	if obj is preload("res://globals/item.gd"):
+		obj.use_action_menu = should_use_action_menu
+
+func set_speed(obj, speed):
+	if obj is preload("res://globals/interactive.gd"):
+		obj.speed = speed
 
 func object_exit_scene(name):
 	objects.erase(name)
@@ -434,6 +430,8 @@ func finished(context):
 	context.waiting = false
 
 func change_scene(params, context):
+	# It might be tempting to use `get_tree().change_scene(params[0])`,
+	# but this custom solution is safer around your scene structure
 	printt("change scene to ", params[0])
 	#var res = ResourceLoader.load(params[0])
 	check_cache()
@@ -453,16 +451,6 @@ func change_scene(params, context):
 
 	camera_set_target(0, null)
 	autosave_pending = true
-
-func swap_scene(p_path):
-
-	var res = res_cache.get_resource(p_path)
-	main.clear_scene()
-	var scene = res.instance()
-	if scene:
-		main.set_scene(scene)
-	else:
-		report_errors("", ["Failed loading scene "+p_path+" for swap_scene"])
 
 func spawn(params):
 	var res = ResourceLoader.load(params[0])
@@ -511,6 +499,10 @@ func autosave_done(err):
 	last_autosave = OS.get_ticks_msec()
 
 func check_cache():
+	# Warm the cache from the hard-coded list, unless configured to skip
+	if ProjectSettings.get_setting("escoria/platform/skip_cache"):
+		return
+
 	for s in scenes_cache_list:
 		if s in scenes_cache:
 			continue
@@ -522,10 +514,16 @@ func load_file(p_game):
 		return
 
 	var game = compile(p_game)
-	clear()
-	loading_game = true
-	run_event(game["load"])
-	main.menu_collapse()
+	# `load` and `ready` are exclusive because you probably don't want to
+	# reset the game state when a scene becomes ready, and `ready` is
+	# redundant when `load`ing state anyway.
+	if "load" in game:
+		clear()
+		loading_game = true
+		run_event(game["load"])
+		main.menu_collapse()
+	elif "ready" in game:
+		run_event(game["ready"])
 
 func load_slot(p_game):
 	var cb = [self, "game_str_loaded"]
@@ -627,8 +625,7 @@ func save():
 
 func set_camera(p_cam):
 	camera = p_cam
-	if ProjectSettings.get("platform/use_custom_camera"):
-		camera.clear_current()
+	camera.clear_current()
 
 func clear():
 	get_tree().call_group_flags(SceneTree.GROUP_CALL_DEFAULT, "game", "game_cleared")
@@ -659,8 +656,7 @@ func focus_out():
 func focus_in():
 	#AudioServer.set_stream_global_volume_scale(1)
 	AudioServer.set_bus_volume_db(0, 1)
-	#AudioServer.set_fx_global_volume_scale(settings.sfx_volume)		
-
+	#AudioServer.set_fx_global_volume_scale(settings.sfx_volume)
 	#if !focus_pause:
 	#	set_pause(false)
 
@@ -674,9 +670,9 @@ func _notification(what):
 		quit_request()
 
 func quit_request():
-	#if main.menu_stack.size() > 0 && (main.menu_stack[main.menu_stack.size()-1] is preload("res://game/ui/confirmation_popup.gd")):
+	#if main.menu_stack.size() > 0 && (main.menu_stack[main.menu_stack.size()-1] is preload("res://demo/ui/confirmation_popup.gd")):
 	#	return
-	#var ConfPopup = get_node("/root/main").load_menu("res://game/ui/confirmation_popup.tscn")
+	#var ConfPopup = main.load_menu("res://demo/ui/confirmation_popup.tscn")
 	#ConfPopup.PopupConfirmation("KEY_QUIT_GAME",self,"","_quit_game")
 	pass
 
@@ -699,7 +695,7 @@ func check_achievement(name):
 
 func show_rate(url):
 	rate_url = url
-	var ConfPopup = get_node("/root/main").load_menu("res://game/ui/confirmation_popup.tscn")
+	var ConfPopup = main.load_menu("res://demo/ui/confirmation_popup.tscn")
 	ConfPopup.PopupConfirmation("rate2",self,"","_rate_game")
 	ConfPopup.set_buttons("rate3", "rate5")
 
@@ -707,15 +703,15 @@ func _rate_game():
 	OS.shell_open(rate_url)
 
 func get_hud_scene():
-	var hpath = "res://ui/hud.tscn"
+	var hpath = ProjectSettings.get_setting("escoria/ui/hud")
 	return hpath
 
 func _ready():
 
-	save_data = load(ProjectSettings.get("application/save_data")).new()
+	save_data = load(ProjectSettings.get_setting("escoria/application/save_data")).new()
 	save_data.start()
 
-	get_tree().set_auto_accept_quit(false)
+	get_tree().set_auto_accept_quit(ProjectSettings.get('escoria/platform/force_quit'))
 	randomize()
 	add_user_signal("music_volume_changed")
 	add_user_signal("paused", ["p_paused"])
@@ -731,14 +727,12 @@ func _ready():
 	compiler = preload("res://globals/esc_compile.gd").new()
 	level = preload("res://globals/vm_level.gd").new()
 	level.set_vm(self)
-	game_size = Vector2()
-	game_size.x = ProjectSettings.get("display/game_width")
-	game_size.y = ProjectSettings.get("display/game_height")
+	game_size = get_viewport().size
 
-	scenes_cache_list.push_back(ProjectSettings.get("platform/telon"))
-	scenes_cache_list.push_back(get_hud_scene())
+	if !ProjectSettings.get_setting("escoria/platform/skip_cache"):
+		scenes_cache_list.push_back(ProjectSettings.get_setting("escoria/platform/telon"))
+		scenes_cache_list.push_back(get_hud_scene())
 
-	if !ProjectSettings.has_method("debug/skip_cache") || !ProjectSettings.get("debug/skip_cache"):
 		printt("cache list ", scenes_cache_list)
 		for s in scenes_cache_list:
 			print("s is ", s)

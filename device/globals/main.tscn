@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://globals/main.gd" type="Script" id=1]
 [ext_resource path="res://globals/bg_music.tscn" type="PackedScene" id=2]
-[ext_resource path="res://globals/dd_player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://ui/dd_default.tscn" type="PackedScene" id=4]
+[ext_resource path="res://ui/dd_player.tscn" type="PackedScene" id=3]
 
 [node name="main" type="Node"]
 
@@ -24,6 +23,7 @@ scale = Vector2( 1, 1 )
 [node name="telon" parent="layers/telon" instance_placeholder="res://globals/telon.tscn"]
 
 global_id = "telon"
+music_volume = 0.425
 
 [node name="dialog" type="CanvasLayer" parent="layers"]
 
@@ -34,7 +34,7 @@ scale = Vector2( 1, 1 )
 
 [node name="dd_player" parent="layers/dialog" instance=ExtResource( 3 )]
 
-resources = [ PoolStringArray( "default" ), [ ExtResource( 4 ) ] ]
+resources = [ PoolStringArray(  ), [  ] ]
 
 [node name="menu" type="CanvasLayer" parent="layers"]
 

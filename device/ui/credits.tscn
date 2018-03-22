@@ -2,16 +2,16 @@
 
 [ext_resource path="res://ui/credits.gd" type="Script" id=1]
 [ext_resource path="res://artwork-src/decor-scene2-preview.png" type="Texture" id=2]
-[ext_resource path="res://scenes/second_scene/sprites/walk_cycle_animation/walk_animation_0.png" type="Texture" id=3]
-[ext_resource path="res://scenes/second_scene/sprites/walk_cycle_animation/walk_animation_1.png" type="Texture" id=4]
-[ext_resource path="res://scenes/second_scene/sprites/walk_cycle_animation/walk_animation_2.png" type="Texture" id=5]
-[ext_resource path="res://scenes/second_scene/sprites/walk_cycle_animation/walk_animation_3.png" type="Texture" id=6]
-[ext_resource path="res://scenes/second_scene/sprites/walk_cycle_animation/walk_animation_4.png" type="Texture" id=7]
-[ext_resource path="res://scenes/second_scene/sprites/walk_cycle_animation/walk_animation_5.png" type="Texture" id=8]
-[ext_resource path="res://scenes/second_scene/sprites/walk_cycle_animation/walk_animation_6.png" type="Texture" id=9]
+[ext_resource path="res://game/rooms/second_scene/sprites/walk_cycle_animation/walk_animation_0.png" type="Texture" id=3]
+[ext_resource path="res://game/rooms/second_scene/sprites/walk_cycle_animation/walk_animation_1.png" type="Texture" id=4]
+[ext_resource path="res://game/rooms/second_scene/sprites/walk_cycle_animation/walk_animation_2.png" type="Texture" id=5]
+[ext_resource path="res://game/rooms/second_scene/sprites/walk_cycle_animation/walk_animation_3.png" type="Texture" id=6]
+[ext_resource path="res://game/rooms/second_scene/sprites/walk_cycle_animation/walk_animation_4.png" type="Texture" id=7]
+[ext_resource path="res://game/rooms/second_scene/sprites/walk_cycle_animation/walk_animation_5.png" type="Texture" id=8]
+[ext_resource path="res://game/rooms/second_scene/sprites/walk_cycle_animation/walk_animation_6.png" type="Texture" id=9]
 [ext_resource path="res://ui/fonts/Big_Bottom_Cartoon_AD_16.font" type="BitmapFont" id=10]
-[ext_resource path="res://scenes/intro-game/sprites/bg-button.png" type="Texture" id=11]
-[ext_resource path="res://scenes/intro-game/sprites/bg-button-pressed.png" type="Texture" id=12]
+[ext_resource path="res://game/rooms/intro-game/sprites/bg-button.png" type="Texture" id=11]
+[ext_resource path="res://game/rooms/intro-game/sprites/bg-button-pressed.png" type="Texture" id=12]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -24,7 +24,8 @@ animations = [ {
 
 [sub_resource type="DynamicFontData" id=2]
 
-font_path = "res://scenes/intro-game/font/Big_Bottom_Cartoon_AD.ttf"
+hinting = 2
+font_path = "res://game/rooms/intro-game/font/Big_Bottom_Cartoon_AD.ttf"
 
 [sub_resource type="DynamicFont" id=3]
 
@@ -40,28 +41,28 @@ length = 1.0
 loop = false
 step = 0.1
 
-[node name="scene" type="Node2D"]
+[node name="scene" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Sprite" type="Sprite" parent="." index="0"]
 
 modulate = Color( 0.392157, 0.392157, 0.392157, 1 )
 position = Vector2( 960, 537.949 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Offset", "Transform" ]
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="1"]
 
 position = Vector2( 953.971, 236.176 )
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 1 )
 animation = "walk_right"
-frame = 8
+frame = 3
 playing = true
 _sections_unfolded = [ "Transform" ]
 
-[node name="CREDITS" type="Label" parent="."]
+[node name="CREDITS" type="Label" parent="." index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -74,6 +75,7 @@ margin_bottom = 902.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
+mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 10 )
@@ -88,7 +90,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Margin" ]
 
-[node name="back" type="TextureButton" parent="."]
+[node name="back" type="TextureButton" parent="." index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -101,7 +103,9 @@ margin_bottom = 1244.0
 rect_scale = Vector2( 0.3, 0.3 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
+focus_mode = 2
 mouse_filter = 0
+mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 toggle_mode = false
@@ -113,7 +117,7 @@ texture_pressed = ExtResource( 12 )
 texture_hover = ExtResource( 12 )
 _sections_unfolded = [ "Margin", "Rect", "Textures" ]
 
-[node name="UI_BACK" type="Label" parent="back"]
+[node name="UI_BACK" type="Label" parent="back" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -126,6 +130,7 @@ margin_bottom = 275.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
+mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 3 )
@@ -139,16 +144,15 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Margin", "Rect", "custom_fonts" ]
 
-[node name="animation" type="AnimationPlayer" parent="."]
+[node name="animation" type="AnimationPlayer" parent="." index="4"]
 
+root_node = NodePath("..")
+autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
-root_node = NodePath("..")
+playback_speed = 1.0
 anims/credits = SubResource( 4 )
-playback/active = true
-playback/speed = 1.0
 blend_times = [  ]
-autoplay = ""
 _sections_unfolded = [ "Playback Options", "playback" ]
 
 

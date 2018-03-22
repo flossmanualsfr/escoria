@@ -2,11 +2,11 @@
 
 [ext_resource path="res://ui/main_menu.gd" type="Script" id=1]
 [ext_resource path="res://ui/start-screen-escoria-in-daiza.png" type="Texture" id=2]
-[ext_resource path="res://scenes/intro-game/sprites/bg-button.png" type="Texture" id=3]
-[ext_resource path="res://scenes/intro-game/sprites/bg-button-pressed.png" type="Texture" id=4]
-[ext_resource path="res://scenes/intro-game/font/Big_Bottom_Cartoon_AD.ttf" type="DynamicFontData" id=5]
-[ext_resource path="res://scenes/intro-game/sprites/lgge-button.png" type="Texture" id=6]
-[ext_resource path="res://scenes/intro-game/sprites/lgge-button-pressed.png" type="Texture" id=7]
+[ext_resource path="res://game/rooms/intro-game/sprites/bg-button.png" type="Texture" id=3]
+[ext_resource path="res://game/rooms/intro-game/sprites/bg-button-pressed.png" type="Texture" id=4]
+[ext_resource path="res://game/rooms/intro-game/font/Big_Bottom_Cartoon_AD.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://game/rooms/intro-game/sprites/lgge-button.png" type="Texture" id=6]
+[ext_resource path="res://game/rooms/intro-game/sprites/lgge-button-pressed.png" type="Texture" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -18,7 +18,8 @@ _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
 [sub_resource type="DynamicFontData" id=2]
 
-font_path = "res://scenes/intro-game/font/Big_Bottom_Cartoon_AD.ttf"
+hinting = 2
+font_path = "res://game/rooms/intro-game/font/Big_Bottom_Cartoon_AD.ttf"
 
 [sub_resource type="DynamicFont" id=3]
 
@@ -50,7 +51,7 @@ use_mipmaps = false
 use_filter = false
 font_data = SubResource( 2 )
 
-[node name="main_menu" type="Control"]
+[node name="main_menu" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -59,12 +60,13 @@ anchor_bottom = 1.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
+mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 script = ExtResource( 1 )
 _sections_unfolded = [ "Margin", "Rect" ]
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Sprite" type="Sprite" parent="." index="0"]
 
 texture = ExtResource( 2 )
 centered = false
@@ -73,7 +75,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="new_game" type="TextureButton" parent="."]
+[node name="new_game" type="TextureButton" parent="." index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -86,7 +88,9 @@ margin_bottom = 854.0
 rect_scale = Vector2( 0.3, 0.3 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
+focus_mode = 2
 mouse_filter = 0
+mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 toggle_mode = false
@@ -98,7 +102,7 @@ texture_pressed = ExtResource( 4 )
 texture_hover = ExtResource( 4 )
 _sections_unfolded = [ "Focus", "Hint", "Mouse", "Rect", "Size Flags", "Textures", "Visibility" ]
 
-[node name="UI_NEW_GAME" type="Label" parent="new_game"]
+[node name="UI_NEW_GAME" type="Label" parent="new_game" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -112,6 +116,7 @@ rect_scale = Vector2( 3, 3 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
+mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 1 )
@@ -125,7 +130,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Grow Direction", "Margin", "Material", "Rect", "Visibility", "custom_fonts", "custom_styles" ]
 
-[node name="continue" type="TextureButton" parent="."]
+[node name="continue" type="TextureButton" parent="." index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -138,7 +143,9 @@ margin_bottom = 1008.0
 rect_scale = Vector2( 0.3, 0.3 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
+focus_mode = 2
 mouse_filter = 0
+mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 toggle_mode = false
@@ -150,7 +157,7 @@ texture_pressed = ExtResource( 4 )
 texture_hover = ExtResource( 4 )
 _sections_unfolded = [ "Anchor", "Margin", "Rect", "Textures" ]
 
-[node name="UI_CONTINUE" type="Label" parent="continue"]
+[node name="UI_CONTINUE" type="Label" parent="continue" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -164,6 +171,7 @@ rect_scale = Vector2( 3, 3 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
+mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 3 )
@@ -177,7 +185,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Grow Direction", "Margin", "Material", "Rect", "Visibility", "custom_fonts", "custom_styles" ]
 
-[node name="credits" type="TextureButton" parent="."]
+[node name="credits" type="TextureButton" parent="." index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -190,7 +198,9 @@ margin_bottom = 1156.0
 rect_scale = Vector2( 0.3, 0.3 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
+focus_mode = 2
 mouse_filter = 0
+mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 toggle_mode = false
@@ -202,7 +212,7 @@ texture_pressed = ExtResource( 4 )
 texture_hover = ExtResource( 4 )
 _sections_unfolded = [ "Rect", "Textures" ]
 
-[node name="UI_CREDITS" type="Label" parent="credits"]
+[node name="UI_CREDITS" type="Label" parent="credits" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -216,6 +226,7 @@ rect_scale = Vector2( 3, 3 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
+mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 3 )
@@ -229,7 +240,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Grow Direction", "Margin", "Material", "Rect", "Visibility", "custom_fonts", "custom_styles" ]
 
-[node name="exit" type="TextureButton" parent="."]
+[node name="exit" type="TextureButton" parent="." index="4"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -242,7 +253,9 @@ margin_bottom = 1252.0
 rect_scale = Vector2( 0.3, 0.3 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
+focus_mode = 2
 mouse_filter = 0
+mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 toggle_mode = false
@@ -254,7 +267,7 @@ texture_pressed = ExtResource( 4 )
 texture_hover = ExtResource( 4 )
 _sections_unfolded = [ "Anchor", "Focus", "Margin", "Mouse", "Rect", "Textures", "Visibility" ]
 
-[node name="UI_QUIT" type="Label" parent="exit"]
+[node name="UI_QUIT" type="Label" parent="exit" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -268,6 +281,7 @@ rect_scale = Vector2( 3, 3 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
+mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 3 )
@@ -281,7 +295,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Grow Direction", "Margin", "Material", "Rect", "Visibility", "custom_fonts", "custom_styles" ]
 
-[node name="en" type="TextureButton" parent="."]
+[node name="en" type="TextureButton" parent="." index="5"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -294,7 +308,9 @@ margin_bottom = 1060.0
 rect_scale = Vector2( 0.5, 0.5 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
+focus_mode = 2
 mouse_filter = 0
+mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 toggle_mode = false
@@ -306,7 +322,7 @@ texture_pressed = ExtResource( 7 )
 texture_hover = ExtResource( 7 )
 _sections_unfolded = [ "Rect", "Textures" ]
 
-[node name="en" type="Label" parent="en"]
+[node name="en" type="Label" parent="en" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -320,6 +336,7 @@ rect_scale = Vector2( 3, 3 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
+mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 4 )
@@ -333,7 +350,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Grow Direction", "Margin", "Material", "Rect", "Visibility", "custom_fonts", "custom_styles" ]
 
-[node name="fr" type="TextureButton" parent="."]
+[node name="fr" type="TextureButton" parent="." index="6"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -346,7 +363,9 @@ margin_bottom = 1002.0
 rect_scale = Vector2( 0.5, 0.5 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
+focus_mode = 2
 mouse_filter = 0
+mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 toggle_mode = false
@@ -358,7 +377,7 @@ texture_pressed = ExtResource( 7 )
 texture_hover = ExtResource( 7 )
 _sections_unfolded = [ "Rect", "Textures" ]
 
-[node name="fr" type="Label" parent="fr"]
+[node name="fr" type="Label" parent="fr" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -372,6 +391,7 @@ rect_scale = Vector2( 3, 3 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
+mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 5 )
@@ -385,7 +405,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Grow Direction", "Margin", "Material", "Rect", "Visibility", "custom_fonts", "custom_styles" ]
 
-[node name="es" type="TextureButton" parent="."]
+[node name="es" type="TextureButton" parent="." index="7"]
 
 visible = false
 anchor_left = 0.0
@@ -399,7 +419,9 @@ margin_bottom = 919.0
 rect_scale = Vector2( 0.5, 0.5 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
+focus_mode = 2
 mouse_filter = 0
+mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 toggle_mode = false
@@ -411,7 +433,7 @@ texture_pressed = ExtResource( 7 )
 texture_hover = ExtResource( 7 )
 _sections_unfolded = [ "Rect", "Textures" ]
 
-[node name="es" type="Label" parent="es"]
+[node name="es" type="Label" parent="es" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -425,6 +447,7 @@ rect_scale = Vector2( 3, 3 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
+mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 6 )

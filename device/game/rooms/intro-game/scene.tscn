@@ -1,0 +1,86 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://globals/scene.gd" type="Script" id=1]
+[ext_resource path="res://game/rooms/intro-game/sprites/decor-background.jpg" type="Texture" id=2]
+[ext_resource path="res://globals/background.gd" type="Script" id=3]
+[ext_resource path="res://game/rooms/intro-game/bad_bamboo.tscn" type="PackedScene" id=4]
+[ext_resource path="res://game/rooms/intro-game/good_bamboo.tscn" type="PackedScene" id=5]
+[ext_resource path="res://game/rooms/intro-game/old_man.tscn" type="PackedScene" id=6]
+[ext_resource path="res://game/rooms/intro-game/sprites/decor-foreground-left.png" type="Texture" id=7]
+[ext_resource path="res://game/rooms/intro-game/sprites/decor-foreground-right.png" type="Texture" id=8]
+[ext_resource path="res://globals/game.tscn" type="PackedScene" id=9]
+
+[node name="scene" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+events_path = ""
+
+[node name="background" type="TextureRect" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 2 )
+stretch_mode = 0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+action = "walk"
+
+[node name="bad_bamboo" parent="." index="1" instance=ExtResource( 4 )]
+
+position = Vector2( 1121.21, 884.903 )
+_sections_unfolded = [ "Material", "Transform", "Visibility", "Z" ]
+placeholders = {
+
+}
+
+[node name="good_bamboo" parent="." index="2" instance=ExtResource( 5 )]
+
+position = Vector2( 1347.53, 897.092 )
+_sections_unfolded = [ "Transform", "Z" ]
+placeholders = {
+
+}
+
+[node name="old_man" parent="." index="3" instance=ExtResource( 6 )]
+
+position = Vector2( 383.883, 617.274 )
+scale = Vector2( 0.7, 0.7 )
+_sections_unfolded = [ "Transform" ]
+placeholders = {
+
+}
+
+[node name="foreground left" type="Sprite" parent="." index="4"]
+
+position = Vector2( 170, 540 )
+texture = ExtResource( 7 )
+_sections_unfolded = [ "Offset", "Region", "Transform", "Z" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="foreground right" type="Sprite" parent="." index="5"]
+
+position = Vector2( 1642, 540 )
+texture = ExtResource( 8 )
+_sections_unfolded = [ "Offset", "Transform" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="game" parent="." index="6" instance=ExtResource( 9 )]
+
+

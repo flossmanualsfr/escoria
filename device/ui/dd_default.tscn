@@ -1,11 +1,11 @@
 [gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://globals/dialog_dialog.gd" type="Script" id=1]
-[ext_resource path="res://scenes/intro-game/sprites/dialogue.png" type="Texture" id=2]
-[ext_resource path="res://scenes/intro-game/sprites/avatar_old_man.png" type="Texture" id=3]
-[ext_resource path="res://scenes/second_scene/sprites/avatar_panda.png" type="Texture" id=4]
-[ext_resource path="res://scenes/second_scene/sprites/avatar_chameleon.png" type="Texture" id=5]
-[ext_resource path="res://scenes/second_scene/sprites/avatar_spirit.png" type="Texture" id=6]
+[ext_resource path="res://game/rooms/intro-game/sprites/dialogue.png" type="Texture" id=2]
+[ext_resource path="res://game/rooms/intro-game/sprites/avatar_old_man.png" type="Texture" id=3]
+[ext_resource path="res://game/rooms/second_scene/sprites/avatar_panda.png" type="Texture" id=4]
+[ext_resource path="res://game/rooms/second_scene/sprites/avatar_chameleon.png" type="Texture" id=5]
+[ext_resource path="res://game/rooms/second_scene/sprites/avatar_spirit.png" type="Texture" id=6]
 [ext_resource path="res://ui/fonts/Big_Bottom_Cartoon_AD_16.font" type="BitmapFont" id=7]
 
 [sub_resource type="Animation" id=1]

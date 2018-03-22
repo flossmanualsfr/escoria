@@ -1,0 +1,153 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://ui/verb_menu.gd" type="Script" id=1]
+[ext_resource path="res://game/rooms/intro-game/sprites/look-inactive.png" type="Texture" id=2]
+[ext_resource path="res://game/rooms/intro-game/sprites/look.png" type="Texture" id=3]
+[ext_resource path="res://game/rooms/intro-game/sprites/pickup-inactive.png" type="Texture" id=4]
+[ext_resource path="res://game/rooms/intro-game/sprites/pickup.png" type="Texture" id=5]
+[ext_resource path="res://game/rooms/intro-game/sprites/use-inactive.png" type="Texture" id=6]
+[ext_resource path="res://game/rooms/intro-game/sprites/use.png" type="Texture" id=7]
+[ext_resource path="res://game/rooms/intro-game/sprites/speak-inactive.png" type="Texture" id=8]
+[ext_resource path="res://game/rooms/intro-game/sprites/speak.png" type="Texture" id=9]
+
+[node name="verb_menu" type="Control"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = -1.0
+margin_right = 40.0
+margin_bottom = 39.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+script = ExtResource( 1 )
+_sections_unfolded = [ "Rect", "Visibility" ]
+
+[node name="actions" type="Control" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+
+[node name="look" type="TextureButton" parent="actions" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 1.0
+margin_right = 230.0
+margin_bottom = 224.0
+rect_scale = Vector2( 0.9, 0.9 )
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 3 )
+_sections_unfolded = [ "Rect", "Textures" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="pick_up" type="TextureButton" parent="actions" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 178.0
+margin_top = 14.0
+margin_right = 422.0
+margin_bottom = 237.0
+rect_scale = Vector2( 0.9, 0.9 )
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 5 )
+_sections_unfolded = [ "Rect", "Textures" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="use" type="TextureButton" parent="actions" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 367.0
+margin_top = 8.0
+margin_right = 577.0
+margin_bottom = 231.0
+rect_scale = Vector2( 0.9, 0.9 )
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 7 )
+_sections_unfolded = [ "Rect", "Textures" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="talk" type="TextureButton" parent="actions" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 523.0
+margin_top = 4.0
+margin_right = 764.0
+margin_bottom = 227.0
+rect_scale = Vector2( 0.9, 0.9 )
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+_sections_unfolded = [ "Rect", "Textures" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+

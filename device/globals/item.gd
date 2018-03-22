@@ -4,7 +4,7 @@ extends "res://globals/interactive.gd"
 
 export var tooltip = ""
 export var action = ""
-export(String, FILE) var events_path = ""
+export(String, FILE, ".esc") var events_path = ""
 export var global_id = ""
 export var use_combine = false
 export var inventory = false
@@ -98,7 +98,7 @@ func input(event):
 	if event is InputEventMouseButton || event.is_action("ui_accept"):
 		if event.is_pressed():
 			clicked = true
-			get_tree().call_group_flags(SceneTree.GROUP_CALL_DEFAULT, "game", "clicked", self, event.get_global_position())
+			get_tree().call_group_flags(SceneTree.GROUP_CALL_DEFAULT, "game", "clicked", self, event.get_global_position(), event)
 			_check_focus(true, true)
 		else:
 			clicked = false
@@ -118,7 +118,7 @@ func _check_focus(focus, pressed):
 			get_node("_pressed").hide()
 
 func get_tooltip():
-	if TranslationServer.get_locale() == ProjectSettings.get("application/tooltip_lang_default"):
+	if TranslationServer.get_locale() == ProjectSettings.get_setting("escoria/application/tooltip_lang_default"):
 		return tooltip
 	else:
 		if tr(tooltip) == tooltip:
@@ -134,7 +134,7 @@ func get_drag_data(point):
 	var c = Control.new()
 	var it = duplicate()
 	it.set_script(null)
-	it.set_pos(Vector2(-50, -80))
+	it.set_position(Vector2(-50, -80))
 	c.add_child(it)
 	c.show()
 	it.show()
@@ -158,7 +158,7 @@ func drop_data(point, data):
 	if !inventory:
 		return
 
-	get_tree().call_group_flags(SceneTree.GROUP_CALL_DEFAULT, "game", "clicked", self, get_pos())
+	get_tree().call_group_flags(SceneTree.GROUP_CALL_DEFAULT, "game", "clicked", self, get_position())
 	vm.drag_end()
 
 
@@ -252,16 +252,16 @@ func set_state(p_state, p_force = false):
 #
 #
 func teleport(obj):
-	set_pos(obj.get_global_pos())
+	set_position(obj.get_global_pos())
 	_update_terrain()
 
 func teleport_pos(x, y):
-	set_pos(Vector2(x, y))
+	set_position(Vector2(x, y))
 	_update_terrain()
 
 func _update_terrain():
 	if self is Node2D && !use_custom_z:
-		set_z(get_position().y)
+		set_z_index(get_position().y)
 	if !scale_on_map && !light_on_map:
 		return
 	print("updating terrain!")
@@ -283,12 +283,12 @@ func _update_terrain():
 		modulate(c)
 
 func _check_bounds():
-	#printt("checking bouds for pos ", get_pos(), terrain.is_solid(get_pos()))
+	#printt("checking bouds for pos ", get_position(), terrain.is_solid(get_position()))
 	if !scale_on_map:
 		return
 	if !Engine.is_editor_hint():
 		return
-	if terrain.is_solid(get_pos()):
+	if terrain.is_solid(get_position()):
 		if has_node("terrain_icon"):
 			get_node("terrain_icon").hide()
 	else:

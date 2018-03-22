@@ -13,10 +13,6 @@ config_version=3
 config/name="Escoria in Daiza"
 run/main_scene="res://globals/scene_main.tscn"
 config/icon="res://icon.png"
-max_voice_volume=2
-save_data="res://globals/save_data.gd"
-speech_suffix=".ogg"
-tooltip_lang_default="en"
 main_scene="res://globals/scene_main.tscn"
 
 [autoload]
@@ -43,6 +39,36 @@ window/test_height=1080
 window/test_width=1920
 window/width=1920
 
+[escoria]
+
+application/max_voice_volume=2
+application/save_data="res://globals/save_data.gd"
+application/speech_suffix=".ogg"
+application/tooltip_lang_default="en"
+application/speech_path="res://game/audio/speech/"
+platform/skip_cache=false
+platform/action_menu_scale=2
+platform/credits="res://ui/credits/credits.tscn"
+platform/dialog_option_height=1
+platform/dialog_type_suffix=""
+platform/force_text_ids=false
+platform/force_disable_typewriter_text=false
+platform/exit_button=true
+platform/screen_resizable=true
+platform/telon="res://globals/telon.tscn"
+platform/window_title_height=32
+ui/hud="res://ui/hud.tscn"
+ui/credits="res://ui/credits.tscn"
+ui/in_game_menu=""
+ui/main_menu="res://ui/main_menu.tscn"
+ui/confirm_popup="res://demo/ui/confirm_popup.tscn"
+ui/savegames=""
+ui/tooltip_follows_mouse=false
+ui/right_mouse_button_action_menu=false
+ui/action_menu=""
+ui/inventory=""
+platform/force_quit=true
+
 [gdnative]
 
 singletons=[  ]
@@ -52,6 +78,7 @@ singletons=[  ]
 inventory_toggle=[ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":5,"pressure":0.0,"pressed":false,"script":null)
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":7,"pressure":0.0,"pressed":false,"script":null)
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":9,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777218,"unicode":0,"echo":false,"script":null)
  ]
 look=[ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":3,"pressure":0.0,"pressed":false,"script":null)
  ]
@@ -75,32 +102,17 @@ use=[ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_na
 
 [locale]
 
-translations=PoolStringArray( "res://translations/general.csv", "res://translations/strings_final.csv", "res://translations/general.fr.translation", "res://translations/general.en.translation", "res://translations/strings_final.en.translation", "res://translations/strings_final.fr.translation" )
+translations=PoolStringArray( "res://game/translations/general.csv", "res://game/translations/strings_final.csv", "res://game/translations/general.fr.translation", "res://game/translations/general.en.translation", "res://game/translations/strings_final.en.translation", "res://game/translations/strings_final.fr.translation" )
 
 [platform]
 
-action_menu_scale=1
-credits="res://game/ui/credits/credits.txt"
 dialog_instance_scale=1
-dialog_option_height=1
-dialog_type_suffix=""
 disable_screen_shaders=false
-exit_button=true
 file_cases="res://game/ui/file_cases/file_cases.tscn"
 gamecenter=false
 ghost_remap=""
 hud_mobile=false
 logos="res://game/logos.ogm"
-screen_resizable=true
 show_ingame_buttons=false
-telon="res://globals/telon.tscn"
 use_custom_camera=false
-window_title_height=32
 windowed_available=true
-
-[ui]
-
-credits="res://ui/credits.tscn"
-in_game_menu=""
-main_menu="res://ui/main_menu.tscn"
-savegames=""

@@ -1,0 +1,152 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://globals/item.gd" type="Script" id=1]
+[ext_resource path="res://game/rooms/intro-game/sprites/click_mask/spirit_click_mask.png" type="BitMap" id=2]
+[ext_resource path="res://game/rooms/second_scene/sprites/spirit-angry.png" type="Texture" id=3]
+[ext_resource path="res://game/rooms/second_scene/sprites/spirit-happy.png" type="Texture" id=4]
+[ext_resource path="res://game/rooms/second_scene/sprites/spirit-neutral.png" type="Texture" id=5]
+
+[sub_resource type="Animation" id=1]
+
+length = 0.1
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=2]
+
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+
+length = 0.1
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+
+[sub_resource type="Animation" id=4]
+
+length = 0.1
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 2 ]
+}
+
+[sub_resource type="SpriteFrames" id=5]
+
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="bamboo_god_2" type="Node2D"]
+
+script = ExtResource( 1 )
+animations = null
+speed = 300
+scale_on_map = false
+light_on_map = false
+tooltip = ""
+action = ""
+events_path = ""
+global_id = ""
+use_combine = false
+inventory = false
+use_action_menu = true
+interact_angle = -1
+talk_animation = "talk"
+active = true
+placeholders = {
+
+}
+use_custom_z = false
+
+[node name="area" type="TextureButton" parent="."]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -512.0
+margin_top = -559.0
+margin_right = 490.0
+margin_bottom = 293.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_click_mask = ExtResource( 2 )
+_sections_unfolded = [ "Margin", "Rect", "Textures", "Visibility" ]
+
+[node name="animation" type="AnimationPlayer" parent="."]
+
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+root_node = NodePath("..")
+anims/angry = SubResource( 1 )
+anims/god_appears = SubResource( 2 )
+anims/happy = SubResource( 3 )
+anims/neutral = SubResource( 4 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = "neutral"
+_sections_unfolded = [ "Playback Options", "playback" ]
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+
+position = Vector2( -10.9368, -133.184 )
+frames = SubResource( 5 )
+animation = "default"
+_sections_unfolded = [ "Visibility" ]
+
+

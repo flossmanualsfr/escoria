@@ -1,5 +1,5 @@
 :load
 cut_scene telon fade_out
-change_scene res://scenes/intro-game/scene.tscn
+change_scene res://game/rooms/intro-game/scene.tscn
 cut_scene telon fade_in
 say old_man game_load_1:"Hello I'm the old man, welcome to the game!" default avatar_old_man

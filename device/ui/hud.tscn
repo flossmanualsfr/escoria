@@ -1,12 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://globals/hud.gd" type="Script" id=1]
-[ext_resource path="res://ui/fonts/Big_Bottom_Cartoon_AD_16.font" type="BitmapFont" id=2]
-[ext_resource path="res://ui/inventory.tscn" type="PackedScene" id=3]
-[ext_resource path="res://globals/inventory.gd" type="Script" id=4]
-[ext_resource path="res://ui/verb_menu.tscn" type="PackedScene" id=5]
+[ext_resource path="res://game/ui/inventory.tscn" type="PackedScene" id=2]
+[ext_resource path="res://game/ui/verb_menu.tscn" type="PackedScene" id=3]
 
-[node name="hud" type="Control"]
+[node name="hud" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -17,12 +15,12 @@ margin_bottom = 40.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
+mouse_default_cursor_shape = 0
 size_flags_horizontal = 2
 size_flags_vertical = 2
 script = ExtResource( 1 )
-_sections_unfolded = [ "Rect" ]
 
-[node name="tooltip" type="Label" parent="."]
+[node name="tooltip" type="Label" parent="." index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -35,34 +33,30 @@ margin_bottom = 115.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
+mouse_default_cursor_shape = 0
 size_flags_horizontal = 2
 size_flags_vertical = 0
-custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 align = 1
 valign = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Margin", "Mouse", "Rect", "custom_fonts" ]
 
-[node name="inventory" parent="." instance=ExtResource( 3 )]
+[node name="inventory" parent="." index="1" instance=ExtResource( 2 )]
 
 margin_left = 1287.0
 margin_top = 746.0
 margin_right = 1327.0
 margin_bottom = 786.0
-script = ExtResource( 4 )
-_sections_unfolded = [ "Margin", "Rect" ]
 
-[node name="verb_menu" parent="." instance=ExtResource( 5 )]
+[node name="verb_menu" parent="." index="2" instance=ExtResource( 3 )]
 
 margin_left = 494.0
 margin_top = 855.0
 margin_right = 534.0
 margin_bottom = 895.0
-size_flags_horizontal = 1
-size_flags_vertical = 1
+rect_clip_content = false
 _sections_unfolded = [ "Margin", "Rect", "Visibility" ]
 
 

@@ -70,7 +70,7 @@ func global_changed(name):
 	printt("is item ", itemid, item)
 
 	item_anim_holder.add_child(item)
-	item.set_pos(Vector2(0, 0))
+	item.set_position(Vector2(0, 0))
 	item.show()
 	item_anim.play("new_item")
 
@@ -119,10 +119,10 @@ func rand_seek(p_node = null):
 
 func _ready():
 	get_node("input_catch").connect("gui_input", self, "input_event")
-	get_node("input_catch").set_size(Vector2(ProjectSettings.get("display/game_width"), ProjectSettings.get("display/game_height")))
+	get_node("input_catch").set_size(get_viewport().size)
 	get_node("animation").play("release_input")
 	add_to_group("game")
 
 	call_deferred("setup_vm")
-	
+
 

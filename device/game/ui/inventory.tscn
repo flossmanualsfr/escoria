@@ -1,0 +1,124 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://globals/inventory.gd" type="Script" id=1]
+[ext_resource path="res://game/rooms/intro-game/sprites/panier2.png" type="Texture" id=2]
+[ext_resource path="res://game/rooms/intro-game/sprites/arrow.png" type="Texture" id=3]
+[ext_resource path="res://game/rooms/intro-game/sprites/arrow-pressed.png" type="Texture" id=4]
+[ext_resource path="res://game/ui/inventory_items.tscn" type="PackedScene" id=5]
+
+[node name="inventory" type="Control" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 1 )
+_sections_unfolded = [ "Margin", "Visibility" ]
+
+[node name="basket" type="Sprite" parent="." index="0"]
+
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 2 )
+centered = false
+_sections_unfolded = [ "Offset", "Transform", "Z" ]
+
+[node name="slots" type="Control" parent="." index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="Position2D" type="Position2D" parent="slots" index="0"]
+
+position = Vector2( 256.746, 161.195 )
+_sections_unfolded = [ "Transform", "Z" ]
+
+[node name="arrow_prev" type="TextureButton" parent="." index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 103.0
+margin_top = 310.0
+margin_right = 271.0
+margin_bottom = 458.0
+rect_rotation = 180.0
+rect_scale = Vector2( 0.4, 0.4 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 4 )
+_sections_unfolded = [ "Rect", "Textures" ]
+
+[node name="arrow_next" type="TextureButton" parent="." index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 396.0
+margin_top = 252.0
+margin_right = 564.0
+margin_bottom = 400.0
+rect_scale = Vector2( 0.4, 0.4 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 4 )
+_sections_unfolded = [ "Rect", "Textures" ]
+
+[node name="items" parent="." index="4" instance=ExtResource( 5 )]
+
+visible = false
+
+[node name="actions" type="Control" parent="." index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+

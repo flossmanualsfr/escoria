@@ -2,7 +2,7 @@
 > [!introduced]
 	say old_man old_man_hello:"Hello young panda, today is time for your first offering to the almighty panda god! I have prepared a bamboo stick for you, pick it up and bring it back to me." default avatar_old_man
 	set_global introduced true
-	debug old_man_get:"Player was introduced" old_man_talk_3:"Now searching for the bamboo"
+	debug "Player was introduced, now searching for the bamboo"
 	stop
 say old_man old_man_get:"Please go get the bamboo stick and come back to me." default avatar_old_man [introduced, !picked_item]
 :use inv_good_bamboo
@@ -16,6 +16,6 @@ say old_man old_man_hello:"Oh no, another perverted young panda... This bamboo i
 set_globals i/* false
 set_global picked_item false
 :look
-say good_bamboo old_man_get:"The master knows how to please the pandas' god. I have to listen to him." default avatar_panda
+say good_bamboo old_man_look:"The master knows how to please the pandas' god. I have to listen to him." default avatar_panda
 :pick_up
-say good_bamboo old_man_get:"He will surely not appreciate it." default avatar_panda
+say good_bamboo old_man_pick_up:"He will surely not appreciate it." default avatar_panda

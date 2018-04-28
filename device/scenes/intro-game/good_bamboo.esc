@@ -6,6 +6,6 @@
 	set_global i/inv_good_bamboo true
 	set_active good_bamboo false
 :look
-say good_bamboo good_bamboo_look_2:"I like to eat bamboo sticks." defalut avatar_panda
+say good_bamboo good_bamboo_look_2:"I like to eat bamboo sticks." default avatar_panda
 :talk
 say good_bamboo good_bamboo_talk_3:"It don't think it will answer me..." default avatar_panda

@@ -27,38 +27,47 @@ margin/bottom = 1080.0
 texture = ExtResource( 2 )
 stretch_mode = 0
 script/script = ExtResource( 3 )
-__meta__ = { "_edit_lock_":true }
+__meta__ = {
+"_edit_lock_": true
+}
 action = "walk"
 
 [node name="bad_bamboo" parent="." instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 1121.21, 884.903 )
 z/z = 884
+tooltip = "A bamboo that smells new"
 use_custom_z = false
 
 [node name="good_bamboo" parent="." instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 1347.53, 897.092 )
 z/z = 897
+tooltip = "A simple bamboo"
 use_custom_z = false
 
 [node name="old_man" parent="." instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 383.883, 617.274 )
 transform/scale = Vector2( 0.7, 0.7 )
+tooltip = "A wise old forest man"
 use_custom_z = true
 
 [node name="foreground left" type="Sprite" parent="."]
 
 transform/pos = Vector2( 170, 540 )
 texture = ExtResource( 7 )
-__meta__ = { "_edit_lock_":true }
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="foreground right" type="Sprite" parent="."]
 
 transform/pos = Vector2( 1642, 540 )
 texture = ExtResource( 8 )
-__meta__ = { "_edit_lock_":true }
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="game" parent="." instance=ExtResource( 9 )]
 

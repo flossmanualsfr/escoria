@@ -1,11 +1,17 @@
 :pick_up
+> [!introduced]
+	say bad_bamboo bamboo_no_pick_up:"I should talk to the master first." default avatar_panda
+> [picked_item]
+	say good_bamboo bamboo_already_picked_up:"I already chose a bamboo." default avatar_panda
 > [introduced, !picked_item]
 	say bad_bamboo bad_bamboo_pick_up_1:"Weird texture for a bamboo..." default avatar_panda
 	anim bad_bamboo pick_up
 	set_global picked_item true
 	set_global i/inv_bad_bamboo true
 	set_active bad_bamboo false
+
 :look
 say bad_bamboo bad_bamboo_look_2:"This bamboo looks so shiny and slick." default avatar_panda
+
 :talk
 say bad_bamboo bad_bamboo_talk_3:"Hello bamboo, where do you come from?" default avatar_panda

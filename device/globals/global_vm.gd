@@ -675,9 +675,14 @@ func quit_request():
 	#	return
 	#var ConfPopup = get_node("/root/main").load_menu("res://game/ui/confirmation_popup.scn")
 	#ConfPopup.PopupConfirmation("KEY_QUIT_GAME",self,"","_quit_game")
-	pass
+	var confirm_popup = get_node("/root/main").load_menu("res://ui/confirm_popup.tscn")
+	confirm_popup.start("UI_QUIT_CONFIRM",self,"_quit_game")
 
-func _quit_game():
+#func _quit_game():
+#	get_tree().quit()
+func _quit_game(p_confirm):
+	if !p_confirm:
+		return
 	get_tree().quit()
 
 func check_achievement(name):

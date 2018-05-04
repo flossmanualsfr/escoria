@@ -23,8 +23,9 @@ Credits
   - [Camille "nylnook" Bissuel](http://nylnook.com/en)
   - [Gaëtan "Reptifur" Hilt](http://repti.fr)
   - [Adrien "Kooda" Ramos](http://upyum.com)
+  - [bosinpai](https://bosinpai.itch.io/)
 
-Contributions to translation : Ranito and Chaosprower
+Contributions to translation: Ranito and Chaosprower
 
 
 Licenses

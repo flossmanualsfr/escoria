@@ -1,6 +1,6 @@
 id,en,fr
 use.id,Use %1,Utiliser %1
-use.combine_id,Use %1 with %2,Utiliser %1 avec %2
+use.combine_id,Use %1 with %2,Utiliser %1 avec %2
 look.id,Look at,Regarder
 pick_up.id,Pick up,Ramasser
 talk.id,Talk to,Parler à
@@ -13,7 +13,7 @@ UI_QUIT_CONFIRM,Do you want to quit the game ?,Souhaitez-vous vraiment quitter 
 UI_NEW_GAME_CONFIRM,Start new game? Your unsaved progress will be lost,Commencer un nouveau jeu ? Vous n'avez pas sauvegardé votre progression…
 UI_BACK,Back to the main menu,Retour au menu principal
 UI_CREDITS,Credits,Crédits
-CREDITS,"Escoria in Daïza was created by Elisa de Castro Guerra, Cédric Gémy, Camille ""nylnook"" Bissuel, Gaëtan ""Reptifur"" Hilt and Adrien ""Kooda"" Ramos in Rennes for the ""Creating Point and Click Games with Escoria"" booksprint from August 22 to 26 in Rennes, France. Contributions to translation : Ranito and Chaosprower","Escoria en Daïza a été créé par Elisa de Castro Guerra, Cédric Gémy, Camille ""nylnook"" Bissuel, Gaëtan ""Reptifur"" Hilt et Adrien ""Kooda"" Ramos à Rennes pour le booksprint « Creating Point and Click Games with Escoria » du 22 au 26 août 2016 à Rennes, France. Contributions aux traductions : Ranito and Chaosprower"
+CREDITS,"Escoria in Daïza was created by Elisa de Castro Guerra, Cédric Gémy, Camille ""nylnook"" Bissuel, Gaëtan ""Reptifur"" Hilt and Adrien ""Kooda"" Ramos in Rennes for the ""Creating Point and Click Games with Escoria"" booksprint from August 22 to 26 in Rennes, France. Contributions to translation : Ranito and Chaosprower. 2018 improvements by bosinpai.","Escoria en Daïza a été créé par Elisa de Castro Guerra, Cédric Gémy, Camille ""nylnook"" Bissuel, Gaëtan ""Reptifur"" Hilt et Adrien ""Kooda"" Ramos à Rennes pour le booksprint « Creating Point and Click Games with Escoria » du 22 au 26 août 2016 à Rennes, France. Contributions aux traductions : Ranito and Chaosprower. Améliorations en 2018 par bosinpai."
 old_man.tooltip,A wise old forest man,Un vieux sage de la forêt
 bad_bamboo.tooltip,A bamboo that smells new,Un bambou qui sent le neuf
 inv_bad_bamboo.tooltip,the bamboo that smells new,le bambou qui sent le neuf
@@ -22,8 +22,8 @@ inv_bad_bamboo_2.tooltip,the shiny bamboo,le bambou brillant
 good_bamboo.tooltip,A simple bamboo,Un simple bambou
 inv_good_bamboo.tooltip,the simple bamboo,le simple bambou
 good_bamboo_2.tooltip,A well hiden bamboo,Un bambou bien caché
-inv_good_bamboo_2.tooltip,the bamboo that used to be well hiden,le bambou qui était bien caché
+inv_good_bamboo_2.tooltip,the bamboo that used to be well hidden,le bambou qui était bien caché
 good_bamboo_3.tooltip,A delicious bamboo,Un bambou délicieux
-inv_good_bamboo_3.tooltip,The delicious bamboo,le bambou délicieux
+inv_good_bamboo_3.tooltip,the delicious bamboo,le bambou délicieux
 chameleon.tooltip,A chameleon,Un caméléon
-bamboo_god_2.tooltip,The Great Panda himself !,Le grand panda en personne !
+bamboo_god_2.tooltip,The Great Panda himself!,Le grand panda en personne !

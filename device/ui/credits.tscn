@@ -45,7 +45,7 @@ transform/pos = Vector2( 953.971, 236.176 )
 transform/scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 1 )
 animation = "walk_right"
-frame = 3
+frame = 2
 playing = true
 
 [node name="CREDITS" type="Label" parent="."]
@@ -99,7 +99,7 @@ size_flags/vertical = 0
 margin/left = 14.0
 margin/top = 9.0
 margin/right = 368.0
-margin/bottom = 63.0
+margin/bottom = 79.0
 custom_fonts/font = ExtResource( 10 )
 custom_colors/font_color = Color( 0.984314, 0.909804, 0.309804, 1 )
 custom_colors/font_color_shadow = Color( 0.439216, 0.266667, 0.00784314, 1 )

@@ -64,6 +64,8 @@ var scenes_cache = {} # this will eventually have everything in scenes_cache_lis
 
 var settings
 
+var wm_quit_request = false
+
 func save_settings():
 	save_data.save_settings(settings, null)
 
@@ -678,9 +680,18 @@ func quit_request():
 	#	return
 	#var ConfPopup = get_node("/root/main").load_menu("res://game/ui/confirmation_popup.tscn")
 	#ConfPopup.PopupConfirmation("KEY_QUIT_GAME",self,"","_quit_game")
-	pass
+	if wm_quit_request:
+		_quit_game(true)
+	wm_quit_request = true
+	var confirm_popup = get_node("/root/main").load_menu("res://ui/confirm_popup.tscn")
+	confirm_popup.start("UI_QUIT_CONFIRM",self,"_quit_game")
 
-func _quit_game():
+#func _quit_game():
+#	get_tree().quit()
+func _quit_game(p_confirm):
+	if !p_confirm:
+		wm_quit_request = false
+		return
 	get_tree().quit()
 
 func check_achievement(name):

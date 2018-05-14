@@ -2,39 +2,39 @@
 good_bamboo_3_pick_up_1,Come with me.,Viens avec moi.
 good_bamboo_3_look_2,This one look like delicious.,Celui-là a l'air délicieux.
 good_bamboo_3_talk_3,All bamboos are alike! How am I supposed to do?,Tous les bambous se ressemblent. Comment je fais moi ?
-chameleon_whe,Maybe he can help me...,Peut-être qu’il peut m’aider…
-chameleon_talk_2,What a strange critter...,Quel étrange créature…
+chameleon_whe,Maybe he can help me...,Peut-être qu'il peut m'aider...
+chameleon_talk_2,What a strange critter...,Quel étrange créature...
 chameleon_talk_3,"You know I can hear you, right?","Tu sais que je t'entends, n'est-ce pas ?"
-chameleon_talk_4,What? You can talk!?,Quoi ? Mais… tu sais parler ?
+chameleon_talk_4,What? You can talk!?,Quoi ? Mais... tu sais parler ?
 chameleon_talk_5,"Sure, can't you?","Bien sûr ! Comme toi, non ?"
-chameleon_talk_6,...,…
+chameleon_talk_6,...,...
 chameleon_talk_7,Good point.,Tu marques un point.
 chameleon_talk_8,You're a chameleon right?,"Tu es un caméléon, n'est-ce pas ?"
 chameleon_talk_9,You're a chameleon right?,"Tu es un caméléon, n'est-ce pas ?"
 chameleon_talk_10,That's right!,"Oui, c'est exact !"
 chameleon_talk_11,What's a chameleon doing here?,Que fait un caméléon ici ?
 chameleon_talk_12,What's a chameleon doing in this part of the world?,Que fait un caméléon dans cette partie du monde ?
-chameleon_talk_13,"Oh you know, I just like traveling a lot.","Oh tu sais, j’aime juste voyager."
+chameleon_talk_13,"Oh you know, I just like traveling a lot.","Oh tu sais, j'aime juste voyager."
 chameleon_talk_14,I have never seen one before!,Je n'en avais encore jamais vu !
 chameleon_talk_15,Whoooah! I've never seen one before!,Whoaou ! Je n'en n'avais jamais vu encore !
 chameleon_talk_16,I guess not many of us are around this part of the globe.,Je crois que nous sommes très peu dans cette partie du monde.
 chameleon_talk_32,Nevermind,Peu importe
 chameleon_talk_33,Nevermind.,Peu importe
-chameleon_talk_17,Do you enjoy our bamboo forest?,Apprécies tu la forêt de bambou ?
-chameleon_talk_18,Do you enjoy our bamboo forest? Are you comfortable?,Apprécies-tu la forêt de bambou ? Tu te sens bien ici ?
-chameleon_talk_19,"Sure, I like it. Where are all other pandas though?","Bien sûr, je l’adore. Mais où sont les autres pandas ?"
+chameleon_talk_17,Do you enjoy our bamboo forest?,Apprécies-tu la forêt de bambou ?
+chameleon_talk_18,Do you enjoy our bamboo forest? Are you comfortable?,Apprécies-tu la forêt de bambou ? Tu te sens bien ici ?
+chameleon_talk_19,"Sure, I like it. Where are all other pandas though?","Bien sûr, je l'adore. Mais où sont les autres pandas ?"
 chameleon_talk_20,Aliens,Des extraterrestres
 chameleon_talk_21,Aliens abducted them!,Les extraterrestre les ont enlevés !
 chameleon_talk_22,Hahahaha! Nice one little panda!,Hahaha ! Très bien petit panda !
 chameleon_talk_23,Forest destruction,Destruction de la forêt
-chameleon_talk_24,The humans are destroying our forest with their machines...,Les humains ont détruis notre forêt avec leurs machines…
+chameleon_talk_24,The humans are destroying our forest with their machines...,Les humains ont détruit notre forêt avec leurs machines...
 chameleon_talk_25,"Ow, that doesn't sound so nice, are you doing anything about it?","Oh, cela ne semble pas bon ça, fais-tu quelque chose contre cela ?"
 chameleon_talk_26,No,Non
-chameleon_talk_27,No... We can't do anything I guess.,Non… mais je crois que nous ne pouvons rien faire.
-chameleon_talk_28,"Oh, I see...","Oh, je vois…"
+chameleon_talk_27,No... We can't do anything I guess.,Non... mais je crois que nous ne pouvons rien faire.
+chameleon_talk_28,"Oh, I see...","Oh, je vois..."
 chameleon_talk_29,Imploring the Pandas' god,Implorer l'esprit du Panda
 chameleon_talk_30,We are making offerings for the Pandas' god so that we can ask him for help. I'm actually gathering some fine bamboos for him! It would be my very first offering to him.,"On est en train de réaliser une offrande au Grand Panda, pour implorer son aide. Je suis en train de collecter des bambous pour lui. Cela sera ma première offrande !"
-chameleon_talk_31,"Well! Today is your lucky day, as I am the Pandas' god! You passed my little test, now bring me the bamboo you found.","Super ! Aujourd'hui, c'est ton jour de chance, puisque je suis le Grand Panda ! Tu as réussi mon petit test, maintenant amène-moi le bambou que tu a trouvé."
+chameleon_talk_31,"Well! Today is your lucky day, as I am the Pandas' god! You passed my little test, now bring me the bamboo you found.","Super ! Aujourd'hui, c'est ton jour de chance, puisque je suis le Grand Panda ! Tu as réussi mon petit test, maintenant amène-moi le bambou que tu as trouvé."
 chameleon_talk_32,Nevermind,Peu importe
 chameleon_talk_33,Nevermind.,Peu importe
 chameleon_talk_32,Nevermind,Peu importe
@@ -43,24 +43,24 @@ chameleon_talk_32,Nevermind,Peu importe
 chameleon_talk_33,Nevermind.,Peu importe
 chameleon_pick_up_32,Hey! Get your hands off me!,Hey ! Enlève tes sales pattes de moi !
 bad_bamboo_2_pick_up_1,I took it off without difficulty.,Je l'ai pris sans difficulté.
-bad_bamboo_2_look_2,This bamboo it's perfect! Maybe a little too much...,"Ce bambou est parfait ! Quoique, peut être un peu trop…."
+bad_bamboo_2_look_2,This bamboo it's perfect! Maybe a little too much...,"Ce bambou est parfait ! Quoique, peut être un peu trop...."
 bad_bamboo_2_talk_3,All your leaves have the same size.,Toutes tes feuilles ont la même taille.
-good_bamboo_2_pick_up_1,You were hiding little bamboo?,Où te caches tu petit bambou ?
-good_bamboo_2_pick_up_2,Hey! It's mine!,"Hé, celui là est à moi !"
-good_bamboo_2_pick_up_3,"Sorry, I need this one in particular for my mission...",Pardon mais j'ai besoin de celui-là exactement pour ma mission…
+good_bamboo_2_pick_up_1,You were hiding little bamboo?,Où te caches-tu petit bambou ?
+good_bamboo_2_pick_up_2,Hey! It's mine!,"Hé, celui-là est à moi !"
+good_bamboo_2_pick_up_3,"Sorry, I need this one in particular for my mission...",Pardon mais j'ai besoin de celui-là exactement pour ma mission...
 good_bamboo_2_pick_up_4,"I'm just kidding, the forest belongs to no one. Take all the bamboo that you need.",Je rigole ! La forêt n'appartient à personne. Prends tous les bambous dont tu as besoin.
 good_bamboo_2_look_5,Is it well enough for the pandas' god?,Est-ce assez bien pour le Grand Panda ?
 good_bamboo_2_talk_6,I see you little bamboo!,Je te vois petit bambou !
-bamboo_god_2_use_3,Oh! This one looks really tasty! Thanks a lot!,Ho ! Celui là à l’air vraiment appétissant ! Merci beaucoup !
+bamboo_god_2_use_3,Oh! This one looks really tasty! Thanks a lot!,Ho ! Celui là à l'air vraiment appétissant ! Merci beaucoup !
 bamboo_god_2_use_4,Yummy!,Miam !
 bamboo_god_2_use_5,I will bloat if you keep doing that!,Je vais exploser si tu continues !
 bamboo_god_2_use_1,"Thank you for your kind offering young panda, you shall receive my blessings. I promise to protect you from the humans now and fo the rest of your days!","Merci pour cette offrande jeune panda, reçois ma bénédiction. Je te protégerais toute ta vie durant contre les humains."
 bamboo_god_2_use_2,What is the meaning of this! [i]“Made in China”?![/i] Be wary of my wrath as I shall curse you and all your lineage!,"Quoi ? [i]Made in China[/i] ? Méfies-toi de ma colère, je pourrais jetter ma malédiction sur toi et tous tes descendants !"
 bamboo_god_2_look_3,It's the pandas' god! I'm so honored to see it. I must carefully choose the bamboo I'll offer him.,C'est l'esprit du Grand Panda ! Je suis si honorée de le rencontrer. Je dois faire très attention à quel bambou je lui offre.
-bamboo_god_2_pick_up_4,I don't think he will fit in my bag...,Je ne pense pas qu'il rentrera dans mon sac…
+bamboo_god_2_pick_up_4,I don't think he will fit in my bag...,Je ne pense pas qu'il rentrera dans mon sac...
 bamboo_god_2_talk_5,How do you like your bamboos?,Comment aimes-tu tes bambous ?
 bamboo_god_2_talk_6,Tasty.,Délicieux.
-chameleon_talk_6,...,…
+chameleon_talk_6,...,...
 bamboo_god_2_talk_8,And local!,et local !
 can_look_1,A can,Une cannette
 box_look_1,An old newspaper,Un vieux journal
@@ -71,18 +71,19 @@ box_open_5,There was a newspaper inside it,Il y a un journal dedans
 chainsaw_look_1,A chainsaw,Une tronçonneuse
 ice_cream_look_1,A strawberry ice cream cone,Un cône de glace à la fraise
 ice_cream_look_2,res://scenes/test/dog_splash_theme.ogg,res://scenes/test/dog_splash_theme.ogg
-good_bamboo_pick_up_1,It smells so good!,Mmm… ça sent bon !
+good_bamboo_pick_up_1,It smells so good!,Mmm... ça sent bon !
 good_bamboo_look_2,I like to eat bamboo sticks.,J'aime manger du bambou.
-good_bamboo_talk_3,It don't think it will answer me...,Je ne pense pas qu'il me répondras…
+good_bamboo_talk_3,It don't think it will answer me...,Je ne pense pas qu'il me répondra...
 old_man_hello,"Hello young panda, today is time for your first offering to the almighty panda god! I have prepared a bamboo stick for you, pick it up and bring it back to me.","Bonjour jeune Panda, aujourd'hui tu vas réaliser ta première offrande à l'Esprit du Grand Panda ! J'ai préparé un bambou, va le récupérer et reviens me voir."
-old_man_get,Player was introduced,Le joueur est introduit
 old_man_talk_3,Now searching for the bamboo,En train de chercher le bambou
-old_man_get,Player was introduced,Le joueur est introduit
-old_man_bien,"Good! You're qualified for the job! Now go to the forest and get some more bamboo. Be sure to offer them to our almighty panda god, it will give him strength to protect our land.","Bien ! Tu es qualifié pour le travail ! Maintenant va dans la forêt et ramasse plus de bambous. Assure-toi de les offrir à l'Esprit du Grand Panda, cela lui donnera de la force pour protéger notre terre."
-old_man_hello,"Hello young panda, today is time for your first offering to the almighty panda god! I have prepared a bamboo stick for you, pick it up and bring it back to me.","Bonjour jeune Panda, aujourd'hui tu vas réaliser ta première offrande à l'Esprit du Grand Panda ! J'ai préparé un bambou, va le récupérer et reviens me voir."
-old_man_get,Player was introduced,Le joueur est introduit
-old_man_get,Player was introduced,Le joueur est introduit
-bad_bamboo_pick_up_1,Weird texture for a bamboo...,Drôle de texture pour un bambou…
+old_man_get,"Please go get the bamboo stick and give it to me.","Va prendre le bambou et donne-le moi s'il te plaît."
+old_man_look,"The master knows how to please the pandas' god. I have to listen to him.","Le maître sait comment plaire au dieu des pandas. Je dois l'écouter."
+old_man_pick_up,"He will surely not appreciate it.","Il n'apprécierait sûrement pas."
+old_man_good,"Good! You're qualified for the job! Now go to the forest and get some more bamboo. Be sure to offer them to our almighty panda god, it will give him strength to protect our land.","Bien ! Tu es qualifié pour le travail ! Maintenant va dans la forêt et ramasse plus de bambous. Offre-les bien à l'Esprit du Grand Panda, cela lui donnera de la force pour protéger notre terre."
+old_man_bad,"Oh no, another perverted young panda... This bamboo is made by humans, little one, not by Mother Earth! Plastic taste. Not good... Now go and give me a real bamboo!","Oh non, encore un jeune panda perverti... Ce bambou a été fabriqué par les humans, petit, pas par Mère Nature! Goût de plastique. Pas bon... Maintenant va et donne-moi un vrai bambou!"
+bamboo_no_pick_up,"I should talk to the master first.","Je devrais d'abord parler au maître."
+bamboo_already_picked_up,"I already chose a bamboo.","J'ai déjà choisi un bambou."
+bad_bamboo_pick_up_1,Weird texture for a bamboo...,Drôle de texture pour un bambou...
 bad_bamboo_look_2,This bamboo looks so shiny and slick.,Ce bambou à l'air si brillant et si lisse.
 bad_bamboo_talk_3,"Hello bamboo, where do you come from?","Bonjour bambou, tu viens d'où ?"
 fallbacks_use_1,use fallback!,utiliser !

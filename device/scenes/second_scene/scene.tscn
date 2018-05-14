@@ -27,12 +27,12 @@ vertices = PoolVector2Array( 1851.58, 1071.84, 8.73805, 1077.05, 17.0549, 1071.9
 polygons = [ PoolIntArray( 0, 1, 2 ), PoolIntArray( 3, 4, 5, 6, 7, 8 ), PoolIntArray( 0, 2, 9, 10 ), PoolIntArray( 11, 7, 6, 12, 13, 14 ), PoolIntArray( 15, 16, 17, 18 ), PoolIntArray( 19, 0, 20, 21, 12 ), PoolIntArray( 22, 23, 24, 25, 26 ), PoolIntArray( 27, 28, 29, 30 ), PoolIntArray( 31, 32, 33, 34, 35 ), PoolIntArray( 36, 35, 34 ), PoolIntArray( 37, 36, 34 ), PoolIntArray( 38, 39, 40, 34, 41 ), PoolIntArray( 22, 26, 42, 43, 44 ), PoolIntArray( 45, 46, 47, 37, 34, 40 ), PoolIntArray( 48, 49, 50, 51, 41 ), PoolIntArray( 12, 21, 13 ), PoolIntArray( 11, 14, 52 ), PoolIntArray( 11, 52, 53, 54 ), PoolIntArray( 17, 55, 38, 41, 18 ), PoolIntArray( 56, 57, 58, 59, 60 ), PoolIntArray( 61, 62, 27, 30, 63, 64 ), PoolIntArray( 65, 66, 67, 68, 69, 70, 71, 72 ), PoolIntArray( 3, 8, 73, 74 ), PoolIntArray( 75, 3, 74, 76, 77 ), PoolIntArray( 78, 79, 75, 77, 80, 81 ), PoolIntArray( 44, 43, 82, 83, 84, 85 ), PoolIntArray( 86, 87, 88, 89, 90, 91 ), PoolIntArray( 92, 93, 94, 95, 96 ), PoolIntArray( 97, 98, 99, 100, 101, 102 ), PoolIntArray( 9, 103, 104, 10 ), PoolIntArray( 105, 83, 106, 98, 97, 107, 108, 109, 110, 111 ), PoolIntArray( 112, 18, 41 ), PoolIntArray( 51, 112, 41 ), PoolIntArray( 113, 48, 41, 114 ), PoolIntArray( 115, 116, 113, 114, 117, 105, 111 ), PoolIntArray( 82, 106, 83 ), PoolIntArray( 118, 119, 120, 121 ), PoolIntArray( 122, 86, 91 ), PoolIntArray( 81, 80, 123, 124 ), PoolIntArray( 81, 124, 125, 126 ), PoolIntArray( 127, 33, 32, 118, 128, 129 ), PoolIntArray( 85, 84, 130, 64, 63 ), PoolIntArray( 59, 131, 132, 60 ), PoolIntArray( 133, 61, 64, 134 ), PoolIntArray( 96, 95, 133, 135, 54, 53, 10, 104 ), PoolIntArray( 60, 132, 71, 70, 136, 137, 138 ), PoolIntArray( 118, 121, 4, 3, 139 ), PoolIntArray( 70, 140, 141, 122, 91, 142, 136 ), PoolIntArray( 68, 67, 5, 4 ), PoolIntArray( 118, 139, 128 ), PoolIntArray( 127, 129, 143 ), PoolIntArray( 127, 143, 144, 134 ), PoolIntArray( 134, 144, 145, 133 ), PoolIntArray( 133, 145, 126, 125, 135 ), PoolIntArray( 20, 0, 10, 146 ) ]
 outlines = [ PoolVector2Array( 17.0549, 1071.95, 27.3844, 1062.28, 36.0089, 1021.15, 67.1896, 1008.55, 92.0549, 986.95, 106.331, 963.434, 164.049, 920.311, 207.055, 891.95, 236.055, 905.95, 298.055, 875.95, 312.654, 857.438, 292.973, 845.656, 276.801, 833.895, 264.305, 830.954, 278.731, 802.877, 307.921, 795.58, 323.18, 782.975, 337.112, 768.38, 342.055, 752.95, 341.295, 735.073, 312.77, 585.48, 358.103, 591.202, 382.31, 613.208, 391.553, 640.496, 403.877, 629.493, 447.554, 668.769, 478.082, 682.996, 489.551, 670.294, 485.15, 639.485, 446.956, 617.277, 444.368, 574.037, 449.21, 547.63, 467.695, 528.704, 485.74, 531.345, 511.708, 512.86, 541.636, 497.455, 569.804, 487.772, 596.652, 493.494, 631.422, 504.937, 654.749, 501.416, 681.596, 518.141, 690.839, 554.231, 695.68, 552.471, 710.205, 518.141, 729.57, 522.102, 733.971, 575.358, 741.894, 581.079, 759.499, 590.322, 766.981, 563.474, 785.026, 535.746, 796.469, 552.031, 830.359, 554.231, 834.32, 573.157, 864.689, 565.675, 877.012, 603.966, 906.061, 598.244, 927.187, 627.292, 935.989, 652.38, 937.75, 673.066, 939.951, 694.192, 950.514, 708.716, 964.158, 722.36, 965.918, 738.644, 979.122, 747.887, 1008.61, 732.483, 1034.14, 743.486, 1054.67, 767.56, 1073.75, 783.097, 1087.83, 776.935, 1090.47, 744.366, 1118.2, 736.444, 1127.44, 695.072, 1142.09, 673.559, 1157.9, 658.705, 1165.99, 636.057, 1158.22, 620.528, 1179.38, 588.121, 1200.95, 584.16, 1238.8, 583.28, 1274.89, 593.843, 1310.54, 583.72, 1333.86, 582.84, 1351.47, 572.277, 1371.71, 567.435, 1394.16, 574.037, 1413.09, 560.393, 1446.98, 552.911, 1473.82, 549.83, 1488.79, 583.28, 1509.03, 600.005, 1513, 624.652, 1527.96, 647.538, 1547.33, 646.658, 1574.17, 675.706, 1599.7, 706.955, 1611.58, 724.56, 1641.95, 744.366, 1696.53, 794.541, 1735.76, 858.928, 1816.4, 944.451, 1851.58, 1071.84, 8.73805, 1077.05 ), PoolVector2Array( 529.636, 711.68, 555.455, 702.941, 595.917, 724.701, 606.42, 720.278, 630.797, 729.957, 647.122, 742.257, 640.476, 779.428, 622.251, 789.562, 600.685, 798.07, 567.345, 793.768, 557.441, 758.948, 529.239, 741.074 ), PoolVector2Array( 813.501, 789.057, 838.236, 774.001, 869.783, 770.775, 925.124, 775.365, 945.815, 794.867, 932.983, 806.815, 914.711, 808.403, 898.028, 813.964, 884.523, 824.689, 861.882, 831.839, 831.783, 822.755, 815.293, 813.793 ), PoolVector2Array( 928.307, 824.992, 933.726, 816.601, 947.188, 817.65, 959.199, 816.745, 984.95, 829.887, 1017.12, 828.839, 1065.26, 846.536, 1080.35, 867.191, 1013.62, 883.874, 975.485, 878.313, 938.544, 857.658, 935.649, 839.678, 934.775, 832.335 ), PoolVector2Array( 1173.09, 1039.4, 1198.93, 1015.02, 1245.41, 1006.33, 1333.19, 1008.28, 1363.04, 1043.2, 1334.66, 1060.46, 1265.53, 1061.28, 1185.77, 1063.79 ) ]
 
-[node name="scene" type="Node2D"]
+[node name="scene" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="background" type="TextureRect" parent="."]
+[node name="background" type="TextureRect" parent="." index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -43,6 +43,7 @@ margin_bottom = 1080.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
+mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 texture = ExtResource( 2 )
@@ -51,7 +52,7 @@ script = ExtResource( 3 )
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Material", "Mouse", "Rect", "Size Flags", "Theme", "Visibility" ]
 action = "walk"
 
-[node name="terrain" type="Navigation2D" parent="."]
+[node name="terrain" type="Navigation2D" parent="." index="1"]
 
 position = Vector2( 0, 440 )
 script = ExtResource( 4 )
@@ -64,17 +65,16 @@ lightmap_modulate = Color( 1, 1, 1, 1 )
 scale_min = 0.05
 scale_max = 0.75
 
-[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="terrain"]
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="terrain" index="0"]
 
 position = Vector2( 0, -442 )
 navpoly = SubResource( 1 )
 enabled = true
 _sections_unfolded = [ "Transform", "Z" ]
 
-[node name="middle_ground_1" type="Sprite" parent="."]
+[node name="middle_ground_1" type="Sprite" parent="." index="2"]
 
 position = Vector2( 1011.95, 844.804 )
-z = 844
 texture = ExtResource( 7 )
 offset = Vector2( 0, -150 )
 script = ExtResource( 8 )
@@ -101,10 +101,9 @@ placeholders = {
 }
 use_custom_z = false
 
-[node name="middle_ground_2" type="Sprite" parent="."]
+[node name="middle_ground_2" type="Sprite" parent="." index="3"]
 
 position = Vector2( 1234.96, 1059.6 )
-z = 1059
 texture = ExtResource( 9 )
 offset = Vector2( 0, -25 )
 script = ExtResource( 8 )
@@ -131,10 +130,9 @@ placeholders = {
 }
 use_custom_z = false
 
-[node name="middle_ground_3" type="Sprite" parent="."]
+[node name="middle_ground_3" type="Sprite" parent="." index="4"]
 
 position = Vector2( 873.55, 817.522 )
-z = 817
 texture = ExtResource( 10 )
 offset = Vector2( 0, -22 )
 script = ExtResource( 8 )
@@ -161,10 +159,9 @@ placeholders = {
 }
 use_custom_z = false
 
-[node name="middle_ground_4" type="Sprite" parent="."]
+[node name="middle_ground_4" type="Sprite" parent="." index="5"]
 
 position = Vector2( 592.388, 772.749 )
-z = 772
 texture = ExtResource( 11 )
 offset = Vector2( 0, -120 )
 script = ExtResource( 8 )
@@ -191,42 +188,38 @@ placeholders = {
 }
 use_custom_z = false
 
-[node name="bad_bamboo_2" parent="." instance=ExtResource( 12 )]
+[node name="bad_bamboo_2" parent="." index="6" instance=ExtResource( 12 )]
 
 position = Vector2( 1039.61, 841.002 )
-z = 841
-tooltip = "Bad bamboo 2"
+tooltip = "A shiny bamboo"
 placeholders = {
 
 }
 
-[node name="good_bamboo_2" parent="." instance=ExtResource( 13 )]
+[node name="good_bamboo_2" parent="." index="7" instance=ExtResource( 13 )]
 
-position = Vector2( 1665.72, 865.303 )
-z = 865
+position = Vector2( 1630.56, 861.602 )
 _sections_unfolded = [ "Transform", "Z" ]
-tooltip = "Good bamboo 2"
+tooltip = "A well hiden bamboo"
 placeholders = {
 
 }
 
-[node name="good_bamboo_3" parent="." instance=ExtResource( 14 )]
+[node name="good_bamboo_3" parent="." index="8" instance=ExtResource( 14 )]
 
 position = Vector2( 472.343, 663.334 )
-z = 663
 _sections_unfolded = [ "Transform", "Z" ]
-tooltip = "Good bamboo 3"
+tooltip = "A delicious bamboo"
 placeholders = {
 
 }
 
-[node name="bamboo_god_2" parent="." instance=ExtResource( 15 )]
+[node name="bamboo_god_2" parent="." index="9" instance=ExtResource( 15 )]
 
 visible = false
 position = Vector2( 984.846, 590.185 )
-z = 590
 _sections_unfolded = [ "Transform", "Visibility", "Z" ]
-tooltip = "The almighty Panda God"
+tooltip = "The Great Panda himself!"
 events_path = "res://scenes/second_scene/bamboo_god_2.esc"
 global_id = "bamboo_god_2"
 interact_angle = 90
@@ -234,46 +227,43 @@ placeholders = {
 
 }
 
-[node name="player" parent="." instance=ExtResource( 16 )]
+[node name="player" parent="." index="10" instance=ExtResource( 16 )]
 
 position = Vector2( 1470.65, 826.26 )
 scale = Vector2( 0.434671, 0.434671 )
-z = 826
 speed = 1000
 placeholders = {
 
 }
 
-[node name="foreground left" type="Sprite" parent="."]
+[node name="foreground left" type="Sprite" parent="." index="11"]
 
 position = Vector2( 236.924, 663.079 )
-z = 2000
 texture = ExtResource( 17 )
 _sections_unfolded = [ "Offset", "Transform", "Z" ]
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="foreground right" type="Sprite" parent="."]
+[node name="foreground right" type="Sprite" parent="." index="12"]
 
 position = Vector2( 1569.99, 540.019 )
-z = 2000
 texture = ExtResource( 18 )
 _sections_unfolded = [ "Offset", "Transform", "Z" ]
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="chameleon" parent="." instance=ExtResource( 19 )]
+[node name="chameleon" parent="." index="13" instance=ExtResource( 19 )]
 
 position = Vector2( 1752.96, 675.222 )
-z = 3000
 _sections_unfolded = [ "Transform", "Visibility", "Z" ]
+tooltip = "A chameleon"
 placeholders = {
 
 }
 use_custom_z = true
 
-[node name="game" parent="." instance=ExtResource( 20 )]
+[node name="game" parent="." index="14" instance=ExtResource( 20 )]
 
 

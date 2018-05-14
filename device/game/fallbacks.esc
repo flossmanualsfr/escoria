@@ -1,6 +1,6 @@
 :use
 debug fallbacks_use_1:"use fallback!"
-say player fallbacks_use_2:"I can't do that"
+say telon fallbacks_use_2:"I can't do that"
 :pick_up
 debug fallbacks_pick_up_3:"pick_up fallback!"
-say player fallbacks_pick_up_4:"That's not a good idea"
+say telon fallbacks_pick_up_4:"That's not a good idea"

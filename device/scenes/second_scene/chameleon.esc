@@ -1,12 +1,14 @@
 :look
 say player chameleon_who:"Maybe he can help me..." default avatar_panda
 :talk
-say player chameleon_talk_2:"What a strange critter..." default avatar_panda
-say chameleon chameleon_talk_3:"You know I can hear you, right?" default avatar_chameleon
-say player chameleon_talk_4:"What? You can talk!?" default avatar_panda
-say chameleon chameleon_talk_5:"Sure, can't you?" default avatar_chameleon
-say player chameleon_talk_6:"..." default avatar_panda
-say player chameleon_talk_7:"Good point." default avatar_panda
+> [!chameleon_intro]
+	say player chameleon_talk_2:"What a strange critter..." default avatar_panda
+	say chameleon chameleon_talk_3:"You know I can hear you, right?" default avatar_chameleon
+	say player chameleon_talk_4:"What? You can talk!?" default avatar_panda
+	say chameleon chameleon_talk_5:"Sure, can't you?" default avatar_chameleon
+	say player chameleon_talk_6:"..." default avatar_panda
+	say player chameleon_talk_7:"Good point." default avatar_panda
+	set_global chameleon_intro true
 ? default avatar_panda
 	- chameleon_talk_8:"You're a chameleon right?"
 		say player chameleon_talk_9:"You're a chameleon right?" default avatar_panda

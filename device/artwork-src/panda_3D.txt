@@ -1,0 +1,2 @@
+Original 3D model available at:
+https://github.com/flossmanualsfr/peril-en-daiza/blob/master/game/peril_en_daiza.blend

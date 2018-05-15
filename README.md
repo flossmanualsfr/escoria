@@ -7,10 +7,14 @@ Escoria in Daïza
 This game was created and produced by the team of authors with two purposes: to be used as a base for the manual's screenshots, to show that it's actually possible to quickly create a game using Escoria, and to demonstrate the features of Escoria as a vertical-strip.
 Since then, the project goes on its own path and is developped by the same team.
 
+
 Download
 -------
-We are currently moving code to Godot 3 !   
-But you still can [download the Godot 2.1.4 stable branch](https://github.com/flossmanualsfr/escoria/archive/2.1.4.zip) 
+
+We are currently upgrading the code to Godot 3!   
+
+- [Source code](https://github.com/flossmanualsfr/escoria/archive/2.1.4.zip) in a single .zip (Godot 2 stable branch - or just `git clone 2.1.4`)
+- [Binaries](https://bosinpai.itch.io/escoria-in-daiza) for testing the game on all platforms
 
 
 Credits

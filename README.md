@@ -13,7 +13,7 @@ Download
 
 We are currently upgrading the code to Godot 3!   
 
-- [Source code](https://github.com/flossmanualsfr/escoria/archive/2.1.4.zip) in a single .zip (Godot 2 stable branch - or just `git clone 2.1.4`)
+- [Source code](https://github.com/flossmanualsfr/escoria/archive/2.1.4.zip) in a single .zip (Godot 2 stable branch - or just `git checkout 2.1.4`)
 - [Binaries](https://bosinpai.itch.io/escoria-in-daiza) for testing the game on all platforms
 
 

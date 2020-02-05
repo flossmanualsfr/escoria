@@ -140,6 +140,7 @@ func add_dialog(state, level, errors):
 			errors.push_back("line "+str(state.line_count)+": invalid indentation for dialog")
 			read_line(state)
 			continue
+		# warning-ignore:unused_variable
 		var read = read_dialog_option(state, level, errors)
 
 func get_token(line, p_from, line_count, errors):
@@ -394,3 +395,4 @@ func compile(p_fname, errors):
 
 	#printt("returning ", p_fname, ret)
 	return ret
+

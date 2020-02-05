@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/asianoriental2.ogg-b52240ca283317d1cdf22f38afce6f0c.oggstr"
+
+[deps]
+
+source_file="res://scenes/intro-game/sounds/asianoriental2.ogg"
+dest_files=[ "res://.import/asianoriental2.ogg-b52240ca283317d1cdf22f38afce6f0c.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

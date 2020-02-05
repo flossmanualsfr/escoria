@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/cameleon_click_mask.png-361b0d1bc33837684910c6f7792c9609.res"
+
+[deps]
+
+source_file="res://scenes/second_scene/sprites/click_mask/cameleon_click_mask.png"
+dest_files=[ "res://.import/cameleon_click_mask.png-361b0d1bc33837684910c6f7792c9609.res" ]
+
+[params]
+
+create_from=0
+threshold=0.5

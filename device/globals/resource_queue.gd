@@ -7,15 +7,19 @@ var time_max = 100 # msec
 var queue = []
 var pending = {}
 
+# warning-ignore:unused_argument
 func _lock(caller):
 	mutex.lock()
 
+# warning-ignore:unused_argument
 func _unlock(caller):
 	mutex.unlock()
 
+# warning-ignore:unused_argument
 func _post(caller):
 	sem.post()
 
+# warning-ignore:unused_argument
 func _wait(caller):
 	sem.wait()
 
@@ -26,7 +30,7 @@ func queue_resource(path, p_in_front = false, p_permanent = false):
 		_unlock("queue_resource")
 		return
 
-	elif ResourceLoader.has(path):
+	elif ResourceLoader.has_cached(path):
 		var res = ResourceLoader.load(path)
 		pending[path] = { "res": res, "permanent": p_permanent }
 		_unlock("queue_resource")
@@ -91,8 +95,7 @@ func is_ready(path):
 func _wait_for_resource(res, path):
 	_unlock("wait_for_resource")
 	while true:
-		#VisualServer.call("sync") # workaround because sync is a keyword
-		VisualServer.force_sync()
+		VisualServer.call("sync") # workaround because sync is a keyword
 		OS.delay_usec(16000) # wait 1 frame
 		_lock("wait_for_resource")
 		if queue.size() == 0 || queue[0] != res:
@@ -151,6 +154,7 @@ func thread_process():
 	_unlock("process")
 
 
+# warning-ignore:unused_argument
 func thread_func(u):
 	while true:
 		thread_process()
@@ -160,3 +164,4 @@ func start():
 	sem = Semaphore.new()
 	thread = Thread.new()
 	thread.start(self, "thread_func", 0)
+

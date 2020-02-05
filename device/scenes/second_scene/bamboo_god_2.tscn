@@ -1,20 +1,21 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://globals/item.gd" type="Script" id=1]
-[ext_resource path="res://scenes/intro-game/sprites/click_mask/spirit_click_mask.pbm" type="BitMap" id=2]
+[ext_resource path="sprites/click_mask/spirit-neutral_click_mask.png" type="BitMap" id=2]
 [ext_resource path="res://scenes/second_scene/sprites/spirit-angry.png" type="Texture" id=3]
 [ext_resource path="res://scenes/second_scene/sprites/spirit-happy.png" type="Texture" id=4]
 [ext_resource path="res://scenes/second_scene/sprites/spirit-neutral.png" type="Texture" id=5]
 
+
 [sub_resource type="Animation" id=1]
 
+resource_name = "angry"
 length = 0.1
 loop = false
 step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
-tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
@@ -25,19 +26,19 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=2]
 
+resource_name = "god_appears"
 length = 1.0
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
+tracks/0/path = NodePath("Sprite:modulate:a")
+tracks/0/interp = 2
 tracks/0/imported = false
 tracks/0/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+"values": [ 0.0, 1.0 ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -48,7 +49,6 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
-tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
@@ -65,7 +65,6 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
-tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
@@ -90,14 +89,14 @@ animations = null
 speed = 300
 scale_on_map = false
 light_on_map = false
-tooltip = ""
+tooltip = "The almighty Panda God"
 action = ""
-events_path = ""
-global_id = ""
+events_path = "res://scenes/second_scene/bamboo_god_2.esc"
+global_id = "bamboo_god_2"
 use_combine = false
 inventory = false
 use_action_menu = true
-interact_angle = -1
+interact_angle = 90
 talk_animation = "talk"
 active = true
 placeholders = {
@@ -107,25 +106,19 @@ use_custom_z = false
 
 [node name="area" type="TextureButton" parent="."]
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = -512.0
-margin_top = -559.0
-margin_right = 490.0
-margin_bottom = 293.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
+focus/ignore_mouse = false
+focus/stop_mouse = true
 size_flags_horizontal = 1
 size_flags_vertical = 1
+margin_left = -511.937
+margin_top = -559.184
+margin_right = 490.063
+margin_bottom = 292.816
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-group = null
 texture_click_mask = ExtResource( 2 )
-_sections_unfolded = [ "Margin", "Rect", "Textures", "Visibility" ]
+mouse_filter = 0
 
 [node name="animation" type="AnimationPlayer" parent="."]
 
@@ -136,17 +129,15 @@ anims/angry = SubResource( 1 )
 anims/god_appears = SubResource( 2 )
 anims/happy = SubResource( 3 )
 anims/neutral = SubResource( 4 )
-playback/active = true
-playback/speed = 1.0
+playback_active = true
+playback_speed = 1.0
 blend_times = [  ]
 autoplay = "neutral"
-_sections_unfolded = [ "Playback Options", "playback" ]
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 
+modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -10.9368, -133.184 )
 frames = SubResource( 5 )
 animation = "default"
-_sections_unfolded = [ "Visibility" ]
-
-
+frame = 2

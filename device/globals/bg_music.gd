@@ -1,6 +1,6 @@
 extends "res://globals/item.gd"
 
-onready var stream = get_node("stream")
+var stream
 var current_music
 
 func game_cleared():
@@ -13,7 +13,7 @@ func set_state(p_state, p_force = false):
 	if p_state == state && !p_force && stream.is_playing():
 		return
 
-	#set_state(p_state, p_force)
+	.set_state(p_state, p_force)
 
 	if stream == null:
 		return
@@ -28,3 +28,9 @@ func set_state(p_state, p_force = false):
 		stream.set_loop(true)
 		stream.play()
 		stream.set_volume(vm.settings.music_volume)
+
+
+
+func _ready():
+	stream = get_node("stream")
+

@@ -1,103 +1,55 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://globals/item.gd" type="Script" id=1]
-[ext_resource path="res://scenes/second_scene/sprites/click_mask/good-bamboo-2_click_mask.pbm" type="BitMap" id=2]
+[ext_resource path="res://scenes/second_scene/sprites/click_mask/good-bamboo-2_click_mask.png" type="BitMap" id=2]
 [ext_resource path="res://scenes/intro-game/sounds/mini-bamboo01.wav" type="AudioStream" id=3]
 [ext_resource path="res://scenes/second_scene/sprites/good-bamboo-2.png" type="Texture" id=4]
 
 [sub_resource type="Animation" id=1]
-
-length = 1.0
-loop = false
-step = 0.1
+resource_name = "pick_up"
 tracks/0/type = "value"
 tracks/0/path = NodePath("AudioStreamPlayer2D:playing")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.9 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ true, false ]
+"values": [ true ]
 }
 
 [node name="good_bamboo_2" type="Node2D"]
-
 script = ExtResource( 1 )
-_sections_unfolded = [ "Z" ]
-animations = null
-speed = 300
-scale_on_map = false
-light_on_map = false
 tooltip = "A bamboo stick"
-action = ""
 events_path = "res://scenes/second_scene/good_bamboo_2.esc"
 global_id = "good_bamboo_2"
-use_combine = false
-inventory = false
-use_action_menu = true
-interact_angle = -1
-talk_animation = "talk"
-active = true
+interact_angle = 90
 placeholders = {
 
 }
-use_custom_z = false
 
 [node name="area" type="TextureButton" parent="."]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_left = -119.0
 margin_top = -384.0
 margin_right = 41.0
 margin_bottom = 24.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 texture_click_mask = ExtResource( 2 )
-_sections_unfolded = [ "Margin", "Textures" ]
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-
 stream = ExtResource( 3 )
-volume_db = 0.0
-autoplay = false
-max_distance = 2000.0
-attenuation = 1.0
-bus = "Master"
-area_mask = 1
 
 [node name="animation" type="AnimationPlayer" parent="."]
-
-playback_process_mode = 1
-playback_default_blend_time = 0.0
-root_node = NodePath("..")
 anims/pick_up = SubResource( 1 )
-playback/active = true
-playback/speed = 1.0
-blend_times = [  ]
-autoplay = ""
 
 [node name="_focus_out" type="Sprite" parent="."]
-
 position = Vector2( -39.0811, -179.29 )
 texture = ExtResource( 4 )
-_sections_unfolded = [ "Offset", "Transform" ]
 
 [node name="_focus_in" type="Sprite" parent="."]
-
 visible = false
 position = Vector2( 136.288, -222.715 )
-_sections_unfolded = [ "Offset", "Transform" ]
-
-

@@ -7,7 +7,7 @@
 say old_man old_man_get:"Please go get the bamboo stick and give it to me." default avatar_old_man [introduced]
 
 :use inv_good_bamboo
-queue_resource res://scenes/second_scene/scene.scn
+queue_resource res://scenes/second_scene/scene.tscn
 say old_man old_man_good:"Good! You're qualified for the job! Now go to the forest and get some more bamboo. Be sure to offer them to our almighty panda god, it will give him strength to protect our land." default avatar_old_man
 cut_scene telon fade_out
 change_scene res://scenes/second_scene/scene.tscn

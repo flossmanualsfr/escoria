@@ -1,5 +1,6 @@
 extends Node
 
+var vm
 var player
 var mode = "default"
 var action_menu = null
@@ -26,11 +27,11 @@ func set_mode(p_mode):
 
 func mouse_enter(obj):
 	var text
-	var tt = obj.get_tooltip()
+	var tt = obj.get_esctooltip()
 	if current_action != "" && current_tool != null:
 		text = tr(current_action + ".combine_id")
 		text = text.replace("%2", tr(tt))
-		text = text.replace("%1", tr(current_tool.get_tooltip()))
+		text = text.replace("%1", tr(current_tool.get_esctooltip()))
 	elif obj.inventory:
 		var action = inventory.get_action()
 		if action == "":
@@ -39,18 +40,19 @@ func mouse_enter(obj):
 		text = text.replace("%1", tr(tt))
 	else:
 		text = tt
-	get_tree().call_group_flags(SceneTree.GROUP_CALL_DEFAULT, "hud", "set_tooltip", text)
+	get_tree().call_group("hud", "set_tooltip", text)
 	vm.hover_begin(obj)
 
+# warning-ignore:unused_argument
 func mouse_exit(obj):
 	var text
 	#var tt = obj.get_tooltip()
 	if current_action != "" && current_tool != null:
 		text = tr(current_action + ".id")
-		text = text.replace("%1", tr(current_tool.get_tooltip()))
+		text = text.replace("%1", tr(current_tool.get_esctooltip()))
 	else:
 		text = ""
-	get_tree().call_group_flags(SceneTree.GROUP_CALL_DEFAULT, "hud", "set_tooltip", text)
+	get_tree().call_group("hud", "set_tooltip", text)
 	vm.hover_end()
 
 func clear_action():
@@ -81,12 +83,12 @@ func clicked(obj, pos):
 		#action_menu.stop()
 		if action == "walk":
 
-			#click.set_pos(pos)
+			#click.set_position(pos)
 			#click_anim.play("click")
 			if player == self:
 				return
 			player.walk_to(pos)
-			get_tree().call_group_flags(SceneTree.GROUP_CALL_DEFAULT, "hud", "set_tooltip", "")
+			get_tree().call_group("hud", "set_tooltip", "")
 
 		elif obj.inventory:
 
@@ -104,7 +106,7 @@ func clicked(obj, pos):
 			if player == self:
 				return
 			player.walk_to(pos)
-			get_tree().call_group_flags(SceneTree.GROUP_CALL_DEFAULT, "hud", "set_tooltip", "")
+			get_tree().call_group("hud", "set_tooltip", "")
 
 		elif obj.use_action_menu && action_menu != null:
 			spawn_action_menu(obj)
@@ -116,10 +118,10 @@ func spawn_action_menu(obj):
 	action_menu.show()
 	var pos
 	if obj.has_node("action_menu_pos"):
-		pos = obj.get_node("action_menu_pos").get_global_pos()
+		pos = obj.get_node("action_menu_pos").get_global_position()
 	else:
-		pos = obj.get_global_pos()
-	action_menu.set_pos(pos)
+		pos = obj.get_global_position()
+	action_menu.set_position(pos)
 	action_menu.start(obj)
 	#obj.grab_focus()
 
@@ -164,6 +166,7 @@ func activate(obj, action, param = null):
 				return
 		fallback(obj, action, param)
 
+# warning-ignore:unused_argument
 func fallback(obj, action, param = null):
 	if fallbacks == null:
 		return
@@ -196,13 +199,14 @@ func scene_input(event):
 		if vm.can_save() && vm.can_interact() && vm.menu_enabled():
 			get_node("/root/main").load_menu(ProjectSettings.get("ui/main_menu"))
 		else:
-			#get_tree().call_group_flags(SceneTree.GROUP_CALL_DEFAULT, "game", "ui_blocked")
+			#get_tree().call_group(0, "game", "ui_blocked")
 			if vm.menu_enabled():
 				get_node("/root/main").load_menu(ProjectSettings.get("ui/in_game_menu"))
 			else:
-				get_tree().call_group_flags(SceneTree.GROUP_CALL_DEFAULT, "game", "ui_blocked")
+				get_tree().call_group("game", "ui_blocked")
 
 
+# warning-ignore:unused_argument
 func _process(time):
 	if !vm.can_interact():
 		check_joystick = false
@@ -214,7 +218,7 @@ func _process(time):
 		var objs = vm.get_registered_objects()
 		var mobj = null
 		var mdist
-		var pos = player.get_pos()
+		var pos = player.get_position()
 		for key in objs:
 			if key == "player":
 				continue
@@ -224,7 +228,7 @@ func _process(time):
 				continue
 			if objs[key].tooltip == "":
 				continue
-			var objpos = objs[key].get_interact_pos()
+			var objpos = objs[key].get_interact_position()
 			var odist = pos.distance_squared_to(objpos)
 			if typeof(mobj) == typeof(null):
 				mobj = objs[key]
@@ -252,7 +256,7 @@ func _process(time):
 		check_joystick = false
 		return
 
-	player.walk_to(player.get_pos() + dir * 20)
+	player.walk_to(player.get_position() + dir * 20)
 
 func set_inventory_enabled(p_enabled):
 	inventory_enabled = p_enabled
@@ -290,10 +294,10 @@ func set_camera_limits():
 		printt("setting camera limits from scene ", area)
 		cam_limit = area
 	else:
-		camera.set_limit(MARGIN_LEFT, camera_limits.pos.x)
-		camera.set_limit(MARGIN_RIGHT, camera_limits.pos.x + camera_limits.size.x)
-		camera.set_limit(MARGIN_TOP, camera_limits.pos.y)
-		camera.set_limit(MARGIN_BOTTOM, camera_limits.pos.y + camera_limits.size.y + get_node("/root/main").screen_ofs.y * 2)
+		camera.set_limit(MARGIN_LEFT, camera_limits.position.x)
+		camera.set_limit(MARGIN_RIGHT, camera_limits.position.x + camera_limits.size.x)
+		camera.set_limit(MARGIN_TOP, camera_limits.position.y)
+		camera.set_limit(MARGIN_BOTTOM, camera_limits.position.y + camera_limits.size.y + get_node("/root/main").screen_ofs.y * 2)
 		printt("setting camera limits from parameter ", camera_limits)
 
 	camera.set_offset(get_node("/root/main").screen_ofs * 2)
@@ -314,6 +318,7 @@ func load_hud():
 
 func _ready():
 	add_to_group("game")
+	vm = get_tree().get_root().get_node("vm")
 	player = get_node("../player")
 	if has_node("action_menu"):
 		action_menu = get_node("action_menu")
@@ -324,6 +329,7 @@ func _ready():
 		click = get_node("click")
 	if has_node("click_anim"):
 		click_anim = get_node("click_anim")
+	#set_process_input(true)
 
 	camera = get_node("camera")
 
@@ -331,4 +337,5 @@ func _ready():
 
 	call_deferred("set_camera_limits")
 	call_deferred("load_hud")
+
 

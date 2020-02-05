@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/pickup_click_mask.png-0d9c1689af90f5004a41e5fb2708cd52.res"
+
+[deps]
+
+source_file="res://scenes/intro-game/sprites/click_mask/pickup_click_mask.png"
+dest_files=[ "res://.import/pickup_click_mask.png-0d9c1689af90f5004a41e5fb2708cd52.res" ]
+
+[params]
+
+create_from=0
+threshold=0.5

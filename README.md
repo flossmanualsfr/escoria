@@ -28,6 +28,7 @@ Credits
   - [Adrien "Kooda" Ramos](http://upyum.com)
   - [bosinpai](https://bosinpai.itch.io/)
 
+Contributions to code porting to Godot 3: StraTon, fleskevor, Beuc  
 Contributions to translation: Ranito and Chaosprower
 
 

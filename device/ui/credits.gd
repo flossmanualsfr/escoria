@@ -22,5 +22,7 @@ func _ready():
 
 	vm = get_tree().get_root().get_node("vm")
 
+	# warning-ignore:return_value_discarded
 	get_node("back").connect("pressed", self, "back_pressed")
+
 

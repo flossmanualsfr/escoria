@@ -5,6 +5,7 @@ var text
 var elapsed = 0
 var total_time
 var character
+var vm
 var speed = 45.0 # characters per second
 var finished = false
 var play_intro = true
@@ -19,7 +20,7 @@ var speech_paused = false
 # these are globals, go somewhere with the game configuration
 var speech_enabled = true
 var speech_language = "en"
-var speech_extension = ".spx"
+var speech_extension = ".ogg"
 var finish_with_speech = false
 
 var speech_locales = ["en", "de"]
@@ -64,16 +65,13 @@ func finish():
 		var anim = get_node("animation")
 		if anim.has_animation("hide"):
 			anim.play("hide")
-		else:
-			_queue_free()
-	else:
-		_queue_free()
+	_queue_free()
 
 func init(p_params, p_context, p_intro, p_outro):
 	character = vm.get_object(p_params[0])
 	context = p_context
 	text = p_params[1]
-	var force_ids = ProjectSettings.get("debug/force_text_ids")
+	var force_ids = ProjectSettings.has_setting("debug/force_text_ids") && ProjectSettings.get("debug/force_text_ids")
 	var sep = text.find(":\"")
 	var text_id = null
 	if sep > 0:
@@ -117,7 +115,7 @@ func init(p_params, p_context, p_intro, p_outro):
 					c.hide()
 
 	character.set_speaking(true)
-	get_tree().call_group_flags(SceneTree.GROUP_CALL_DEFAULT, "game", "set_mode", "dialog")
+	get_tree().call_group("game", "set_mode", "dialog")
 	if has_node("animation") && play_intro:
 		var anim = get_node("animation")
 		if anim.has_animation("show"):
@@ -137,7 +135,7 @@ func init(p_params, p_context, p_intro, p_outro):
 	label.set_visible_characters(0)
 
 	if self is Node2D:
-		set_z(1)
+		set_z_index(1)
 
 	setup_speech(text_id)
 
@@ -150,6 +148,8 @@ func setup_speech(tid):
 		return
 
 	var fname = "res://audio/speech/"+speech_language+"/"+tid+speech_extension
+	if !ResourceLoader.exists(fname):
+		return
 	printt(" ** loading speech ", fname)
 	speech_stream = load(fname)
 	if !speech_stream:
@@ -189,22 +189,23 @@ func game_paused(p_pause):
 
 func _queue_free():
 	queue_free()
-	get_tree().call_group_flags(SceneTree.GROUP_CALL_DEFAULT, "game", "set_mode", "default")
+	get_tree().call_group("game", "set_mode", "default")
 	vm.finished(context)
 
 
+# warning-ignore:unused_argument
 func anim_finished(anim_name):
-	# TODO use the parameter here?
-	var cur = get_node("animation").get_current_animation()
-	if cur == "show":
+	if anim_name == "show":
 		set_process(true)
-	if cur == "hide":
+	if anim_name == "hide":
 		_queue_free()
 
 func _ready():
+	vm = get_tree().get_root().get_node("vm")
 	speech_extension = ProjectSettings.get("application/speech_suffix")
 	add_to_group("events")
 	if has_node("animation"):
+		# warning-ignore:return_value_discarded
 		get_node("animation").connect("animation_finished", self, "anim_finished")
 	label = get_node("anchor/text")
 
@@ -216,3 +217,4 @@ func _ready():
 		speech_language = default_speech_language
 
 	vm.connect("paused", self, "game_paused")
+

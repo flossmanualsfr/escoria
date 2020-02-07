@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/old_man_bien.ogg-d445faaa1fde4d39b9cfb1fd23637a93.oggstr"
+
+[deps]
+
+source_file="res://audio/speech/en/old_man_bien.ogg"
+dest_files=[ "res://.import/old_man_bien.ogg-d445faaa1fde4d39b9cfb1fd23637a93.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

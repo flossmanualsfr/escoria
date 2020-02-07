@@ -1,4 +1,4 @@
-tool 
+tool
 
 extends Node2D
 
@@ -34,7 +34,7 @@ func set_active(p_active):
 		hide()
 
 func walk_to(pos, context = null):
-	walk_path = terrain.get_path(get_position(), pos)
+	walk_path = terrain.get_terrain_path(get_position(), pos)
 	walk_context = context
 	if walk_path.size() == 0:
 		task = null
@@ -50,15 +50,16 @@ func walk_to(pos, context = null):
 	set_process(true)
 	params_queue = null
 
-func walk(pos, speed, context = null):
+func walk(pos, _speed, context = null):
 	walk_to(pos, context)
 
+# warning-ignore:unused_argument
 func anim_finished(anim_name):
-	if anim_notify != null:
+	if typeof(anim_notify) != typeof(null):
 		vm.finished(anim_notify)
 		anim_notify = null
 
-	if anim_scale_override != null:
+	if typeof(anim_scale_override) != typeof(null):
 		set_scale(get_scale() * anim_scale_override)
 		anim_scale_override = null
 
@@ -101,7 +102,7 @@ func anim_get_ph_paths(p_anim):
 	return ret
 
 func play_anim(p_anim, p_notify = null, p_reverse = false, p_flip = null):
-	if p_notify != null && (!has_node("animation") || !get_node("animation").has_animation(p_anim)):
+	if typeof(p_notify) != typeof(null) && (!has_node("animation") || !get_node("animation").has_animation(p_anim)):
 		vm.finished(p_notify)
 		return
 
@@ -119,8 +120,8 @@ func play_anim(p_anim, p_notify = null, p_reverse = false, p_flip = null):
 	pose_scale = 1
 	_update_terrain()
 	if p_flip != null:
-		var s = get_scale()
-		set_scale(s * p_flip)
+		var scale = get_scale()
+		set_scale(scale * p_flip)
 		anim_scale_override = p_flip
 	else:
 		anim_scale_override = null
@@ -155,7 +156,7 @@ func interact(p_params):
 			animation.play(animations.idles[last_dir])
 			pose_scale = animations.idles[last_dir + 1]
 			_update_terrain()
-		get_tree().call_group_flags(SceneTree.GROUP_CALL_DEFAULT, "game", "interact", p_params)
+		get_tree().call_group("game", "interact", p_params)
 
 func walk_stop(pos):
 	set_position(pos)
@@ -171,7 +172,7 @@ func walk_stop(pos):
 		else:
 			animation.play(animations.idles[last_dir])
 			pose_scale = animations.idles[last_dir + 1]
-		get_tree().call_group_flags(SceneTree.GROUP_CALL_DEFAULT, "game", "interact", params_queue)
+		get_tree().call_group("game", "interact", params_queue)
 	else:
 		animation.play(animations.idles[last_dir])
 		pose_scale = animations.idles[last_dir + 1]
@@ -181,7 +182,7 @@ func walk_stop(pos):
 		walk_context = null
 
 func _get_dir(angle):
-	var deg = rad2deg(angle) + 180
+	var deg = int(rad2deg(angle) + 180 + 45) % 360
 	return _get_dir_deg(deg)
 
 func _get_dir_deg(deg):
@@ -196,7 +197,7 @@ func _get_dir_deg(deg):
 
 
 func _notification(what):
-	if !get_tree() || !Engine.is_editor_hint():
+	if is_inside_tree() || !Engine.is_editor_hint():
 		return
 
 	if what == CanvasItem.NOTIFICATION_TRANSFORM_CHANGED:
@@ -221,14 +222,16 @@ func _check_bounds():
 		get_node("terrain_icon").show()
 
 func _update_terrain():
+	if !terrain:
+		return
 	var pos = get_position()
-	set_z(pos.y)
+	set_z_index(pos.y)
 	var color = terrain.get_terrain(pos)
-	var scal = terrain.get_scale_range(color.b)
-	scal.x = scal.x * pose_scale
+	var scale = terrain.get_scale_range(color.b)
+	scale.x = scale.x * pose_scale
 	#if scale != last_scale:
-	if scal != get_scale():
-		last_scale = scal
+	if scale != get_scale():
+		last_scale = scale
 		set_scale(last_scale)
 	color = terrain.get_light(pos)
 	for s in sprites:
@@ -265,7 +268,7 @@ func _process(time):
 
 		pos = new_pos
 
-		var angle = (old_pos.angle_to_point(pos) - PI/2) * -1
+		var angle = old_pos.angle_to_point(pos)
 		set_position(pos)
 
 		last_dir = _get_dir(angle)
@@ -292,6 +295,7 @@ func teleport(obj):
 	set_position(pos)
 	_update_terrain()
 
+# warning-ignore:unused_argument
 func set_state(name):
 	pass
 
@@ -309,7 +313,6 @@ func _find_sprites(p = null):
 func _ready():
 
 	terrain = get_parent().get_node("terrain")
-	print(terrain)
 	_find_sprites(self)
 	if Engine.is_editor_hint():
 		return
@@ -319,7 +322,9 @@ func _ready():
 	vm.register_object("player", self)
 	#_update_terrain();
 	if has_node("animation"):
+		# warning-ignore:return_value_discarded
 		get_node("animation").connect("animation_finished", self, "anim_finished")
 
 	last_scale = get_scale()
 	set_process(true)
+

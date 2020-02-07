@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/look_click_mask.png-b7402416ebd8ba020f873672a25d613e.res"
+
+[deps]
+
+source_file="res://scenes/intro-game/sprites/click_mask/look_click_mask.png"
+dest_files=[ "res://.import/look_click_mask.png-b7402416ebd8ba020f873672a25d613e.res" ]
+
+[params]
+
+create_from=0
+threshold=0.5

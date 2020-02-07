@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/spirit-neutral_click_mask.png-0c125490772a2bc63952ebd326025399.res"
+
+[deps]
+
+source_file="res://scenes/second_scene/sprites/click_mask/spirit-neutral_click_mask.png"
+dest_files=[ "res://.import/spirit-neutral_click_mask.png-0c125490772a2bc63952ebd326025399.res" ]
+
+[params]
+
+create_from=0
+threshold=0.5

@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/speak_click_mask.png-4471902a8721feb1103e7afaefab256d.res"
+
+[deps]
+
+source_file="res://scenes/intro-game/sprites/click_mask/speak_click_mask.png"
+dest_files=[ "res://.import/speak_click_mask.png-4471902a8721feb1103e7afaefab256d.res" ]
+
+[params]
+
+create_from=0
+threshold=0.5

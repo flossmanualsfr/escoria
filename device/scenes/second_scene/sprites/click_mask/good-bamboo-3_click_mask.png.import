@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/good-bamboo-3_click_mask.png-adb801afd425131f972535cc54905da3.res"
+
+[deps]
+
+source_file="res://scenes/second_scene/sprites/click_mask/good-bamboo-3_click_mask.png"
+dest_files=[ "res://.import/good-bamboo-3_click_mask.png-adb801afd425131f972535cc54905da3.res" ]
+
+[params]
+
+create_from=0
+threshold=0.5

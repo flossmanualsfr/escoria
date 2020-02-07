@@ -1,12 +1,10 @@
 tool
 
-extends Navigation2D 
-
-export(Texture) var scales setget set_scales,get_scales
-export(Texture) var lightmap setget set_lightmap,get_lightmap
+extends Navigation2D
+export(Image) var scales setget set_scales,get_scales
+export(Image) var lightmap setget set_lightmap,get_lightmap
 export var bitmaps_scale = Vector2(1,1) setget set_bm_scale,get_bm_scale
 export(int, "None", "Scales", "Lightmap") var debug_mode = 1 setget debug_mode_updated
-export var lightmap_modulate = Color(1, 1, 1, 1)
 export var scale_min = 0.3
 export var scale_max = 1.0
 var texture
@@ -82,7 +80,7 @@ func make_global(pos):
 	pos = pos + get_position()
 	return pos
 
-func get_path(p_src, p_dest):
+func get_terrain_path(p_src, p_dest):
 	printt("get path ", p_src, p_dest)
 	if !(self is Navigation2D):
 		printt("returning a line")
@@ -109,9 +107,9 @@ func get_scale_range(r):
 	return Vector2(r, r)
 
 func get_terrain(pos):
-	if scales == null || scales.get_data().is_empty():
+	if typeof(scales) == typeof(null) || scales.get_data().empty():
 		return Color(1, 1, 1, 1)
-	return get_pixel(pos, scales.get_data())
+	return get_pixel(pos, scales)
 
 func _color_mul(a, b):
 	var c = Color()
@@ -122,12 +120,11 @@ func _color_mul(a, b):
 	return c
 
 func get_light(pos):
-	if typeof(lightmap) == typeof(null) || lightmap.get_data().is_empty():
-		return lightmap_modulate
-	return _color_mul(get_pixel(pos, lightmap.get_data()), lightmap_modulate)
+	if typeof(lightmap) == typeof(null) || lightmap.get_data().empty():
+		return modulate
+	return _color_mul(get_pixel(pos, lightmap), modulate)
 
 func get_pixel(pos, p_image):
-	p_image.lock()
 
 	pos = make_local(pos)
 	pos = pos * 1.0 / bitmaps_scale
@@ -135,6 +132,8 @@ func get_pixel(pos, p_image):
 	if pos.x + 1 >= p_image.get_width() || pos.y + 1 >= p_image.get_height() || pos.x < 0 || pos.y < 0:
 		return Color()
 
+
+	p_image.lock()
 	var ll = p_image.get_pixel(pos.x, pos.y)
 	var ndif = Vector2()
 	ndif.x = pos.x - floor(pos.x)
@@ -182,10 +181,10 @@ func _draw():
 	#if !get_tree().is_editor_hint():
 	#	printt("*********no editor hint")
 	#	return
-	var scale_vect = bitmaps_scale
+	var scale = bitmaps_scale
 
 	var src = Rect2(0, 0, texture.get_width(), texture.get_height())
-	var dst = Rect2(0, 0, texture.get_width() * scale_vect.x, texture.get_height() * scale_vect.y)
+	var dst = Rect2(0, 0, texture.get_width() * scale.x, texture.get_height() * scale.y)
 
 	draw_texture_rect_region(texture, dst, src)
 	#draw_texture(texture, Vector2(0, 0))
@@ -193,5 +192,6 @@ func _draw():
 func _ready():
 	#path = ImagePathFinder.new()
 	_update_texture()
+
 
 

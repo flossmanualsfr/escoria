@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/bamboo_god_2_use_2.ogg-7403d5214b01b4ef40c3bff4e1bbeb00.oggstr"
+
+[deps]
+
+source_file="res://audio/speech/en/bamboo_god_2_use_2.ogg"
+dest_files=[ "res://.import/bamboo_god_2_use_2.ogg-7403d5214b01b4ef40c3bff4e1bbeb00.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

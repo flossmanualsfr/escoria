@@ -1,5 +1,7 @@
 extends Control
 
+var vm
+var root
 var confirm_popup = null
 var labels = []
 
@@ -7,7 +9,8 @@ func load_autosave():
 	vm.load_autosave()
 
 func can_continue():
-	return true #(main.get_current_scene() is preload("res://globals/scene.gd")) || vm.save_data.autosave_available()
+	return (root.get_current_scene() is preload("res://globals/scene.gd")) || vm.save_data.autosave_available()
+	pass
 
 func button_clicked():
 	# play a clicking sound here?
@@ -15,8 +18,8 @@ func button_clicked():
 
 func newgame_pressed():
 	button_clicked()
-	if main.get_current_scene() is preload("res://globals/scene.gd"):
-		confirm_popup = main.load_menu("res://ui/confirm_popup.tscn")
+	if root.get_current_scene() is preload("res://globals/scene.gd"):
+		confirm_popup = get_node("/root/main").load_menu("res://ui/confirm_popup.tscn")
 		confirm_popup.start("UI_NEW_GAME_CONFIRM",self,"start_new_game")
 	else:
 		start_new_game(true)
@@ -28,39 +31,41 @@ func start_new_game(p_confirm):
 
 func continue_pressed():
 	button_clicked()
-	if main.get_current_scene() is preload("res://globals/scene.gd"):
-		main.menu_collapse()
+	if root.get_current_scene() is preload("res://globals/scene.gd"):
+		root.menu_collapse()
 	else:
 		if vm.continue_enabled:
 			load_autosave()
 
 func save_pressed():
 	button_clicked()
-	main.load_menu(ProjectSettings.get("ui/savegames"))
+	get_node("/root/main").load_menu(ProjectSettings.get("ui/savegames"))
 
 func settings_pressed():
 	button_clicked()
-	main.load_menu(ProjectSettings.get("ui/settings"))
+	root.load_menu(ProjectSettings.get("ui/settings"))
 
 func credits_pressed():
 	button_clicked()
-	main.load_menu(ProjectSettings.get("ui/credits"))
+	root.load_menu(ProjectSettings.get("ui/credits"))
 
 func close():
-	main.menu_close(self)
+	root.menu_close(self)
 	queue_free()
 
+# warning-ignore:unused_argument
 func input(event):
 	if event.is_pressed() && !event.is_echo() && event.is_action("menu_request"):
-		if main.get_current_scene() is preload("res://globals/scene.gd"):
+		if root.get_current_scene() is preload("res://globals/scene.gd"):
 			close()
+	pass
 
 func menu_collapsed():
 	close()
 
 func _on_exit_pressed():
 	button_clicked()
-	confirm_popup = main.load_menu("res://ui/confirm_popup.tscn")
+	confirm_popup = get_node("/root/main").load_menu("res://ui/confirm_popup.tscn")
 	confirm_popup.start("UI_QUIT_CONFIRM",self,"_quit_game")
 	
 func _quit_game(p_confirm):
@@ -92,21 +97,27 @@ func set_continue_button():
 func _on_language_selected(lang):
 	vm.settings.text_lang=lang
 	TranslationServer.set_locale(vm.settings.text_lang)
-	get_tree().call_group_flags(SceneTree.GROUP_CALL_DEFAULT, "ui", "language_changed")
+	get_tree().call_group("ui", "language_changed")
 	vm.save_settings()
 
 func _ready():
+	printt("** locale is ", TranslationServer.get_locale())
+	# warning-ignore:return_value_discarded
 	get_node("new_game").connect("pressed", self, "newgame_pressed")
+	# warning-ignore:return_value_discarded
 	get_node("continue").connect("pressed", self, "continue_pressed")
 	#get_node("save").connect("pressed", self, "save_pressed")
+	# warning-ignore:return_value_discarded
 	get_node("exit").connect("pressed", self, "_on_exit_pressed")
 	#get_node("settings").connect("pressed", self, "settings_pressed")
+	# warning-ignore:return_value_discarded
 	get_node("credits").connect("pressed",self,"credits_pressed")
 	vm = get_tree().get_root().get_node("vm")
 	set_process_input(true)
-	#main.set_current_scene(self)
+	#get_node("/root/main").set_current_scene(self)
 
-	main.menu_open(self)
+	root = get_node("/root/main")
+	root.menu_open(self)
 
 	_find_labels()
 
@@ -116,5 +127,6 @@ func _ready():
 
 	if !ProjectSettings.get("platform/exit_button"):
 		get_node("exit").hide()
+
 
 

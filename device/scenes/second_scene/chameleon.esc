@@ -1,5 +1,5 @@
 :look
-say player chameleon_who:"Maybe he can help me..." default avatar_panda
+say player chameleon_whe:"Maybe he can help me..." default avatar_panda
 :talk
 > [!chameleon_intro]
 	say player chameleon_talk_2:"What a strange critter..." default avatar_panda

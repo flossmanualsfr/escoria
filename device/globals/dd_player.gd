@@ -19,3 +19,4 @@ func start(params, level):
 
 func _ready():
 	add_to_group("dialog_dialog")
+

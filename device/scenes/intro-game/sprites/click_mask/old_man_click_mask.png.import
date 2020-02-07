@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/old_man_click_mask.png-189613394091fec44669476c9205c74a.res"
+
+[deps]
+
+source_file="res://scenes/intro-game/sprites/click_mask/old_man_click_mask.png"
+dest_files=[ "res://.import/old_man_click_mask.png-189613394091fec44669476c9205c74a.res" ]
+
+[params]
+
+create_from=0
+threshold=0.5

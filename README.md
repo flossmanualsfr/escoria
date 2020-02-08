@@ -3,12 +3,12 @@ Escoria in Daïza
 
 ![Welcome screen](https://github.com/flossmanualsfr/escoria/blob/master/device/ui/start-screen-escoria-in-daiza.png)
 
-**Escoria in Daïza** video game started its development during a booksprint organized by the [french-speaking branch of Floss Manuals](http://fr.flossmanuals.net/) between the 22th and 26th of August 2016 in Rennes, France, with the objective of writing a manual for [Creating Point and Click Games with Escoria](https://fr.flossmanuals.net/creating-point-and-click-games-with-escoria/). It's based on the original [Peril in Daïza](http://perilendaiza.com/) game, created during a previous booksprint.
-This game was created and produced by the team of authors with two purposes: to be used as a base for the manual's screenshots, to show that it's actually possible to quickly create a game using Escoria, and to demonstrate the features of Escoria as a vertical-strip.
-Since then, the project goes on its own path and is developped by the same team.
+**Escoria in Daïza** video game started its development during a book sprint organized by the [french-speaking branch of Floss Manuals](http://fr.flossmanuals.net/) between the 22th and 26th of August 2016 in Rennes, France, with the goal of writing a manual for [Creating Point and Click Games with Escoria](https://fr.flossmanuals.net/creating-point-and-click-games-with-escoria/). It's based on the original [Peril in Daïza](http://perilendaiza.com/) game, created during a previous book sprint.
+This game was created and produced by the team of authors with three purposes: to create screenshots for the manual, to show that it's possible to quickly create a game using Escoria, and to showcase its features.
+Since then, development on the project continues.
 
 
-Download
+Downloads
 -------
 
 - [Source code](https://github.com/flossmanualsfr/escoria/)

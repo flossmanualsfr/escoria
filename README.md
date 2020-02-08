@@ -35,13 +35,13 @@ Contributions to translation: Ranito and Chaosprower
 
 Licenses
 --------
-Except if stated otherwise, the whole game (code and assets) is released under MIT license
+Except if stated otherwise, the whole game (code and assets) is released under MIT license.
 
 The typeface "Big Bottom Cartoon", created by [Karen B. Jones](http://karenbjones.com/) and modified by [Cedric Gémy](http://cgemy.com/) for the non-ASCII characters and the italic version of the font, is distributed under Creative Commons Attribution-ShareAlike 3.0.
 
 The start screen image is by [David Revoy](http://davidrevoy.com/), updated by Camille Bissuel under Creative Commons Attribution-ShareAlike 3.0.
 
-Sounds are by [Olivier Meunier](http://f-lat.org/) from the original Peril In Daa game, distributed under Creative Commons Attribution-ShareAlike 3.0, except asian orientals taken from http://opengameart.org/content/asianoriental2 which is CC0
+Sounds are by [Olivier Meunier](http://f-lat.org/) from the original Peril In Daïza game, distributed under Creative Commons Attribution-ShareAlike 3.0, except asian orientals taken from http://opengameart.org/content/asianoriental2 which is CC0.
 
 
 Art credit for Escoria test scene

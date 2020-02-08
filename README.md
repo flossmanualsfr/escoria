@@ -11,8 +11,9 @@ Since then, development on the project continues.
 Downloads
 -------
 
-- [Source code](https://github.com/flossmanualsfr/escoria/)
-- [Binaries](https://bosinpai.itch.io/escoria-in-daiza) for testing the game on all platforms
+Here are binaries (Godot exports) for testing the game on all platforms:
+- [Godot 3.2 exports](https://github.com/flossmanualsfr/escoria/releases)
+- [Godot 2.1 exports](https://bosinpai.itch.io/escoria-in-daiza) 
 
 
 Credits
